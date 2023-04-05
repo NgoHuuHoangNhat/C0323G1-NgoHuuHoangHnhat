@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn Giản</title>
+
+</head>
+<body style="background: paleturquoise;"  >
+<center>
+    <form action="/student" method="get" >
+        <font aria-label="">
+            <fieldset style="background: aliceblue; width: 350px; height: 270px">
+                <legend style="background: red; text-align: center">SỞ THÍCH CỦA BẠN</legend>
+                <table>
+                    <tr>
+                        <td><p style="color: blue; margin: 0px;">Họ và Tên</p></td>
+                        <td><input name="yourname" type="text" placeholder="yourname"></td>
+                    </tr>
+                    <tr>
+                        <td><p style="color: blue; margin: 0">Email</p></td>
+                        <td><input type="text" placeholder="email"></td>
+                    </tr>
+
+                    <tr>
+                        <td><p style="color: blue;margin: 0px">Sở Thích</p></td>
+                        <td><label style="color: coral"><input name="hobby" value="sport" type="checkbox">Thể
+                            Thao</label>
+                            <label style="color: coral"><input name="hobby" value="music" type="checkbox">Âm
+                                Nhạc</label>
+                            <label style="color: coral"><input name="hobby" value="web" type="checkbox">Lướt Web</label><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <label style="color: coral"><input name="hobby" value="tourism" type="checkbox">Du
+                                lịch</label>
+                            <label style="color: coral"><input name="hobby" value="game" type="checkbox">Chơi
+                                game</label>
+                            <label style="color: coral"><input name="hobby" value="book" type="checkbox">Đọc
+                                sách</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><label style="color: coral"><input name="hobby" value="movie" type="checkbox">Điện
+                            ảnh</label><br><br></td>
+                    </tr>
+                </table>
+                <input type="reset" value="Nhập Lại">
+                <input type="submit" value="Gửi Thông Tin">
+            </fieldset>
+        </font>
+    </form>
+</center>
+</body>
+</html>
