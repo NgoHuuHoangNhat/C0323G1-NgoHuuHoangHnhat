@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm Trung Bình 3 môn</title>
+</head>
+<body>
+  <form action="diem_trung_binh_3_mon.html" method="get">
+    <table>
+        <thead>
+            <th>Môn Học</th>
+            <th> Điểm</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lý</td>
+                <td><label><input id="physic" type="number"></label></td>
+            </tr>
+            <tr>
+                <td>Hoá</td>
+                <td><label><input id="chemistry" type="number"></label></td>
+            </tr>
+            <tr>
+                <td>Sinh</td>
+                <td><label><input id="biology" type="number"></label></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="getValue()">Kết quả</button></td>
+            </tr>
+            <tr>
+                <td>Điểm Trung Bình</td>
+                <td id="mediumScore"></td>
+            </tr>
+            <tr>
+                <td>Tổng</td>
+                <td id ="sum"></td>
+            </tr>
+        </tbody>
+    </table>
+
+  </form>
+
+</body>
+<script>
+    function getValue() {
+        let a = +document.getElementById("physic").value;
+        let b = +document.getElementById("chemistry").value;
+        let c = +document.getElementById("biology").value;
+        let e = a + b + c;
+        let d = e / 3;
+
+        // alert(d)
+        document.getElementById('mediumScore').innerText = d
+        document.getElementById('sum').innerText = e
+    }
+</script>
+</html>

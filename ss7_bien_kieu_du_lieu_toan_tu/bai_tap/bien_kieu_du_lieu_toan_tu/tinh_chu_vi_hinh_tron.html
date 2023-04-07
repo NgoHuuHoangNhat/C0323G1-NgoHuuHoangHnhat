@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Chu Vi Hinh Tron</title>
+</head>
+<body>
+    <form action="/student" method="get">
+    <h1>Tinh Chu Vi Hinh Tron</h1>
+    <label><input type="number" id="radius"></label><br>
+    <button type="button" onclick="getValue()">Result</button>
+    <br>
+    <div id="perimeter"></div>
+    </form>
+</body>
+<script>
+
+    function getValue() {
+        const PI = 3.14
+        let radius = +document.getElementById("radius").value;
+        let perimeter = 2 * radius * PI
+        // alert(perimeter)
+        document.getElementById('perimeter').innerText = perimeter
+    }
+</script>
+
+
+</html>

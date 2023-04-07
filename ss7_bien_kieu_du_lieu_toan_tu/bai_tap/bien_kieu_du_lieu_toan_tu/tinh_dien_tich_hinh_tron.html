@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tinh Dien Tich Hinh Tron</title>
+</head>
+<body>
+    <form action="/student" method="get">
+    <h1>Tinh Dien Tich Hinh Tron</h1>
+    <label><input type="number" id="radius"></label><br>
+    <button type="button" onclick="getValue()">Ket Qua</button><br>
+    <div id="acreage"></div>
+    </form>
+</body>
+<script>
+
+    function getValue(){
+        const PI = 3.14
+        let radius = +document.getElementById("radius").value;
+        let acreage = radius*radius*PI
+        // alert(acreage)
+        document.getElementById('acreage').innerText = acreage
+    }
+</script>
+</html>

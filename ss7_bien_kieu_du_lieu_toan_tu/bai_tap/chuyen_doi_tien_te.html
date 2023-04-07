@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        th, td {
+            border: 1px;
+            padding: 8px;
+        }
+
+        tr {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<form action="/student" method="get">
+    <table>
+        <thead>
+        <tr>
+            <th>Amout</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input id="number" type="number"/></td>
+            <td><select id="fromCurrency">
+                <option>VND</option>
+                <option>USD</option>
+            </select></td>
+            <td><select id="toCurrency">
+                <option>VND</option>
+                <option>USD</option>
+            </select></td>
+            <td>
+                <button type="button" onclick="getValue()">Convert</button>
+            </td>
+        <tr>
+            <td>Result</td>
+            <td id="result"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+<script>
+    function getValue() {
+        let amount = +document.getElementById("number").value;
+        let fromCurrency = document.getElementById('fromCurrency').value;
+        let toCurrency = document.getElementById('toCurrency').value;
+        if (fromCurrency === "VND") {
+            if (toCurrency === 'USD') {
+                amount = amount/23000
+            } else {
+                amount = amount
+            }
+        }
+        else {
+            if(toCurrency === 'VND'){
+                amount = 23000 * amount
+            }
+            else{
+                amount = amount
+            }
+        }
+            document.getElementById('result').innerText = amount;
+    }
+
+
+</script>
+</html>

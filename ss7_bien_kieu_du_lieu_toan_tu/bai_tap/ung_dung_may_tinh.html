@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung May Tinh</title>
+</head>
+<body>
+    <form action="/student" method="get">
+        <h1>Caculator</h1><br>
+        <label><input id="number1" type="number"></label>
+        <label><input id="number2" type="number"></label><br>
+        <button id="add" type="button" onclick="addNumber()">Addition(+)</button>
+        <button id="sub" type="button" onclick="subNumber()">Subtraction(-)</button>
+        <button id="multi" type="button" onclick="multiNumber()">Multiplication(x)</button>
+        <button id="divi" type="button" onclick="divNumber()">Division(/)</button><br>
+        <div>Result</div>
+        <div id="result"></div>
+
+    </form>
+
+</body>
+<script>
+    function addNumber(){
+        let a = +document.getElementById('number1').value;
+        let b = +document.getElementById('number2').value;
+        let c = a + b;
+        document.getElementById('result').innerText = c;
+    }
+    function subNumber(){
+        let a = +document.getElementById('number1').value;
+        let b = +document.getElementById('number2').value;
+        let c = a - b;
+        document.getElementById('result').innerText = c;
+    }
+    function multiNumber(){
+        let a = +document.getElementById('number1').value;
+        let b = +document.getElementById('number2').value;
+        let c = a * b;
+        document.getElementById('result').innerText = c;
+    }
+    function divNumber(){
+        let a = +document.getElementById('number1').value;
+        let b = +document.getElementById('number2').value;
+        let c = a / b;
+        document.getElementById('result').innerText = c;
+    }
+
+</script>
+</html>
