@@ -5,10 +5,13 @@
     <title>Bài 3</title>
 </head>
 <body>
-    <button type="button" onclick="oninput()">Nhập 2 Số</button>
-    <button type="button" onclick="oninput()">Kết Quả</button>
 </body>
 <script>
-    prompt()
+    inputWidth = prompt("Enter the width");
+    inputHeight = prompt("Enter the height");
+    let width = +inputWidth;
+    let height = +inputHeight;
+    let area = width * height;
+    document.write("The area is: " + area);
 </script>
 </html>
