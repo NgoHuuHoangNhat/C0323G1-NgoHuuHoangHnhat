@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<form action="/student" method="get">
+    <div>Điểm Bài Kiểm Tra <input type="number" id="numA"></div>
+    <div>Điểm Thi Giữa Kì <input type="number" id="numB"></div>
+    <div>Điểm Thi Cuối Kì <input type="number" id="numC"></div>
+    <button type="button" onclick="getValue()">Result</button>
+    <div id="result"></div>
+</form>
+</body>
+<script>
+    function getValue(){
+        let numA = +document.getElementById('numA').value;
+        let numB = +document.getElementById('numB').value;
+        let numC = +document.getElementById('numC').value;
+        let numD = numA*1/10 + numB*3/10+ numC*6/10
+        if (numD<6.5){
+            document.getElementById('result').innerText = 'Học sinh trung bình'
+        }
+        else if (numD<8){
+            document.getElementById('result').innerText = 'Học sinh tiên tiến'
+        }
+        else {
+            document.getElementById('result').innerText = 'Học sinh giỏi'
+        }
+    }
+</script>
+</html>

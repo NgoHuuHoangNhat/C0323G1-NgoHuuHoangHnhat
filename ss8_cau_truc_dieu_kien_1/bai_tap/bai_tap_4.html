@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<form action="/student" method="get">
+    <div>Nhập a<input type="number" id="numA"></div>
+    <div>Nhập b<input type="number" id="numB"></div>
+    <div>Nhập c<input type="number" id="numC"></div>
+    <button type="button" onclick="getValue()">Result</button>
+    <div id="result"></div>
+</form>
+</body>
+<script>
+    function getValue() {
+        let numA = +document.getElementById('numA').value;
+        let numB = +document.getElementById('numB').value;
+        let numC = +document.getElementById('numC').value;
+        let max = numA
+        if ((!(numA % 1)) && (!(numB % 1)) && (!(numC % 1))){
+            if (max < numB || max < numC) {
+                if (numB < numC) {
+                    document.getElementById('result').innerText = 'c là số lớn nhất'
+                } else {
+                    document.getElementById('result').innerText = 'b là số lớn nhất'
+                }
+            }
+            else {
+                document.getElementById('result').innerText = 'a là số lớn nhất'
+            }
+        }
+        else {
+            document.getElementById('result').innerText = 'không phải số nguyên'
+        }
+        }
+</script>
+</html>

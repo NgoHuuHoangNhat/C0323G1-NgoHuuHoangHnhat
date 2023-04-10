@@ -43,15 +43,15 @@
 </body>
 <script>
     function getValue() {
-        let a = +document.getElementById("physic").value;
-        let b = +document.getElementById("chemistry").value;
-        let c = +document.getElementById("biology").value;
-        let e = a + b + c;
-        let d = e / 3;
+        let physic = +document.getElementById("physic").value;
+        let chemistry = +document.getElementById("chemistry").value;
+        let biology = +document.getElementById("biology").value;
+        let sum = physic + chemistry + biology;
+        let medium = sum / 3;
 
         // alert(d)
-        document.getElementById('mediumScore').innerText = d
-        document.getElementById('sum').innerText = e
+        document.getElementById('mediumScore').innerText = medium;
+        document.getElementById('sum').innerText = sum;
     }
 </script>
 </html>

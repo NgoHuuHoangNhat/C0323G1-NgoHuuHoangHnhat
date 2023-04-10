@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<form action="/student" method="student">
+    <div>Nhập vào a <input type="number" id="num"></div>
+    <button type="button" onclick="getValue()">Result</button>
+    <div id="result"></div>
+</form>
+</body>
+<script>
+    function getValue() {
+        let num = +document.getElementById('num').value;
+        if (!(num % 1)) {
+            if (num > 0) {
+                document.getElementById('result').innerText = 'a lớn hơn 0';
+            }
+            else if (num == 0) {
+                document.getElementById('result').innerText = 'a bằng 0';
+            }
+            else {
+                document.getElementById('result').innerText = 'a bé hơn 0';
+            }
+        } else {
+            document.getElementById('result').innerText = 'a không phải số nguyên';
+        }
+
+    }
+</script>
+</html>

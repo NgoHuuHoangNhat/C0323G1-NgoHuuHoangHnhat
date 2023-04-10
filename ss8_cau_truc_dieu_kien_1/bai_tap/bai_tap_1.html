@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<form action="/student" method="get">
+    <label>Nhập vào a <input type="number" id="numA"></label><br>
+    <label>Nhập vào b <input type="number" id="numB"></label><br>
+    <label>
+        <button type="button" onclick="getValue()">Result</button>
+    </label><br>
+    <div id="result"></div>
+</form>
+</body>
+<script>
+    function getValue() {
+        let numA = +document.getElementById("ina").value;
+        let numB = +document.getElementById("inb").value;
+        if (!(numA % numB)) {
+            document.getElementById('result').innerText = 'a chia hết cho b'
+        } else {
+            document.getElementById('result').innerText = 'a không chia hết cho b'
+        }
+    }
+</script>
+</html>

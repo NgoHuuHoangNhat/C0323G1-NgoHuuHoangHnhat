@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Nâng Cao</title>
+    <style>
+        body{
+            margin: 100px;
+        }
+        .caculator {
+            width: 400px;
+            height: 290px;
+            background: khaki;
+            text-align: center;
+        }
+
+        .result {
+            text-align: center;
+            width:400px;
+           height: 50px;
+        }
+
+        form .button {
+            text-align: center;
+            height: 35px;
+        }
+
+        .button input[type="button"] {
+            width: 50px;
+            height: 30px;
+        }
+        .result input[type="text"]{
+            width: 370px;
+            height: 25px;
+            font-size: 20px;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="caculator">
+    <h1>Caculator</h1>
+    <form action="" method="get">
+        <div class="result">
+            <input type="text" id="abc" name="abc">
+        </div>
+        <div class="button">
+            <div class="row">
+                <input type="button" value="Rad" name="rad" onclick="val(rad.value)">
+                <input type="button" value=" " name="v" onclick="val(v.value)">
+                <input type="button" value="x!" name="redundant" onclick="val(redundant.value)">
+                <input type="button" value="(" name="openparen" onclick="val(openparen.value)">
+                <input type="button" value=")" name="closeparen" onclick="val(closeparen.value)">
+                <input type="button" value="%" name="percent" onclick="val(percent.value)">
+                <input type="button" value="AC" name="AC" onclick="val(AC.value)">
+            </div>
+        </div>
+        <div class="button">
+            <div class="row">
+                <input type="button" value="lnv" name="lnv" onclick="val(lnv.value)">
+                <input type="button" value="sin" name="sin" onclick="val(sin.value)">
+                <input type="button" value="ln" name="ln" onclick="val(ln.value)">
+                <input type="button" value="7" name="number7" onclick="val(number7.value)">
+                <input type="button" value="8" name="number8" onclick="val(number8.value)">
+                <input type="button" value="9" name="number9" onclick="val(number9.value)">
+                <input type="button" value="/" name="divi" onclick="val(divi.value)">
+            </div>
+        </div>
+        <div class="button">
+            <div class="row">
+                <input type="button" value="PI" name="pi" onclick="val(pi.value)">
+                <input type="button" value="cos" name="cos" onclick="val(cos.value)">
+                <input type="button" value="log" name="log" onclick="val(log.value)">
+                <input type="button" value="4" name="number4" onclick="val(number4.value)">
+                <input type="button" value="5" name="number5" onclick="val(number5.value)">
+                <input type="button" value="6" name="number6" onclick="val(number6.value)">
+                <input type="button" value="x" name="multi" onclick="val(multi.value)">
+            </div>
+        </div>
+        <div class="button">
+            <div class="row">
+                <input type="button" value="e" name="e" onclick="val(e.value)">
+                <input type="button" value="tan" name="tan" onclick="val(tan.value)">
+                <input type="button" value="√" name="squareRoot" onclick="val(squareRoot.value)">
+                <input type="button" value="1" name="number1" onclick="val(number1.value)">
+                <input type="button" value="2" name="number2" onclick="val(number2.value)">
+                <input type="button" value="3" name="number3" onclick="val(number3.value)">
+                <input type="button" value="-" name="subtraction" onclick="val(subtraction.value)">
+            </div>
+        </div>
+        <div class="button">
+            <div class="row">
+                <input type="button" value="ANS" name="ans" onclick="val(ans.value)">
+                <input type="button" value="EXP" name="exp" onclick="val(exp.value)">
+                <input type="button" value="^" name="exponentiation" onclick="val(exponentiation.value)">
+                <input type="button" value="0" name="number0" onclick="val(number0.value)">
+                <input type="button" value="." name="showdots" onclick="val(showdots.value)">
+                <input type="button" value="=" name="sum" onclick="val(sum.value)">
+                <input type="button" value="+" name="add" onclick="val(add.value)">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+
+</script>
+</html>

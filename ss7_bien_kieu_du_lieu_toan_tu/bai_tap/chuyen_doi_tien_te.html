@@ -59,22 +59,22 @@
         let toCurrency = document.getElementById('toCurrency').value;
         if (fromCurrency === "VND") {
             if (toCurrency === 'USD') {
-                amount = amount/23000
-            } else {
-                amount = amount
+                amount = amount/23000;
+            }
+            else {
+                amount = amount;
             }
         }
         else {
             if(toCurrency === 'VND'){
-                amount = 23000 * amount
+                amount = 23000 * amount;
             }
             else{
-                amount = amount
+                amount = amount;
             }
         }
             document.getElementById('result').innerText = amount;
     }
-
 
 </script>
 </html>
