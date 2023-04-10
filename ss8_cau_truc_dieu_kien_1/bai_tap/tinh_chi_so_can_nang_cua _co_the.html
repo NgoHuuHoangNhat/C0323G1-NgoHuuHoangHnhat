@@ -7,8 +7,8 @@
 <body>
 <h1>Tính Chỉ Số Cân Nặng Của Cơ Thể</h1>
 <form action="/student" method="get">
-    <div><input type="number" id="height">Chiều cao</div>
-    <div><input type="number" id="weight">Cân nặng</div>
+    <div>Chiều cao <input type="number" id="height"></div>
+    <div>Cân nặng <input type="number" id="weight"></div>
     <button type="button" onclick="getValue()">Result</button>
 </form>
 </body>
@@ -16,7 +16,7 @@
     function getValue() {
         let height = +document.getElementById('height').value;
         let weight = +document.getElementById('weight').value;
-        let bmi = weight / (height * height)
+        let bmi = weight / (height * height);
         if (bmi < 18.5) {
             document.write("Underweight");
         } else if (bmi < 25) {

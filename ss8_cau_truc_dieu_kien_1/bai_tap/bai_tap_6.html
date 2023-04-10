@@ -15,17 +15,17 @@
 <script>
     function getValue(){
         let saleFigures = +document.getElementById('salesFigures').value;
-        let moneyA = 0.2*saleFigures
-        let moneyB = 0.4*saleFigures
-        let moneyC = 0.6*saleFigures
+        let salesBonusA = 0.2*saleFigures
+        let salesBonusB = 0.4*saleFigures
+        let salesBonusC = 0.6*saleFigures
         if (saleFigures<20000000){
-            document.getElementById('result').innerText = 'hoa hồng của bạn là ' + moneyA;
+            document.getElementById('result').innerText = 'hoa hồng của bạn là ' + salesBonusA;
         }
         else if (saleFigures<70000000){
-            document.getElementById('result').innerText = 'hoa hồng của bạn là ' + moneyB;
+            document.getElementById('result').innerText = 'hoa hồng của bạn là ' + salesBonusB;
         }
         else{
-            document.getElementById('result').innerText = 'hoa hồng của bạn là ' + moneyC;
+            document.getElementById('result').innerText = 'hoa hồng của bạn là ' + salesBonusC;
         }
     }
 </script>

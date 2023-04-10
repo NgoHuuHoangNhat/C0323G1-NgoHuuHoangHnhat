@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Năm Nhuận</title>
+</head>
+<body>
+<h1>Kiểm Tra Năm Nhuận</h1>
+<label>Nhập Năm<input type="number" id="year"></label>
+<button type="button" onclick="getFullYear()">Result</button>
+<div id="result"></div>
+</body>
+<script>
+    function getFullYear() {
+        let year = +document.getElementById('year').value;
+        if (!(year % 4) && (year % 100)) {
+            document.getElementById('result').innerText = 'năm nhuận';
+        }
+        else if (!(year % 100) && (year % 400)) {
+            document.getElementById('result').innerText = 'không phải năm nhuận';
+        }
+        else if (!(year % 100) && !(year % 400)) {
+            document.getElementById('result').innerText = 'năm nhuận';
+        }
+        else {
+            document.getElementById('result').innerText = 'không phải năm nhuận';
+        }
+    }
+</script>
+</html>

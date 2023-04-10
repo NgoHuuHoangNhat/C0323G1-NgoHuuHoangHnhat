@@ -6,8 +6,8 @@
 </head>
 <body>
 <form action="/student" method="get">
-    <label>Nhập vào a <input type="number" id="numA"></label><br>
-    <label>Nhập vào b <input type="number" id="numB"></label><br>
+    <label>Nhập vào a <input type="number" id="numberA"></label><br>
+    <label>Nhập vào b <input type="number" id="numberB"></label><br>
     <label>
         <button type="button" onclick="getValue()">Result</button>
     </label><br>
@@ -16,13 +16,20 @@
 </body>
 <script>
     function getValue() {
-        let numA = +document.getElementById("ina").value;
-        let numB = +document.getElementById("inb").value;
-        if (!(numA % numB)) {
-            document.getElementById('result').innerText = 'a chia hết cho b'
-        } else {
-            document.getElementById('result').innerText = 'a không chia hết cho b'
+        let numberA = +document.getElementById("numberA").value;
+        let numberB = +document.getElementById("numberB").value;
+        if (numberB !== 0) {
+            if (!(numberA % numberB)) {
+                document.getElementById('result').innerText = 'a chia hết cho b';
+            } else {
+                document.getElementById('result').innerText = 'a không chia hết cho b';
+            }
         }
+        else
+            {
+                document.getElementById('result').innerText = 'vô nghiệm';
+            }
+
     }
 </script>
 </html>

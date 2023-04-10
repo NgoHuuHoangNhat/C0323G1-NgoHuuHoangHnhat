@@ -6,22 +6,22 @@
 </head>
 <body>
 <form action="/student" method="get">
-    <div>Nhập a<input type="number" id="numA"></div>
-    <div>Nhập b<input type="number" id="numB"></div>
-    <div>Nhập c<input type="number" id="numC"></div>
+    <div>Nhập a <input type="number" id="numberA"></div>
+    <div>Nhập b <input type="number" id="numberB"></div>
+    <div>Nhập c <input type="number" id="numberC"></div>
     <button type="button" onclick="getValue()">Result</button>
     <div id="result"></div>
 </form>
 </body>
 <script>
     function getValue() {
-        let numA = +document.getElementById('numA').value;
-        let numB = +document.getElementById('numB').value;
-        let numC = +document.getElementById('numC').value;
-        let max = numA
-        if ((!(numA % 1)) && (!(numB % 1)) && (!(numC % 1))){
-            if (max < numB || max < numC) {
-                if (numB < numC) {
+        let numberA = +document.getElementById('numberA').value;
+        let numberB = +document.getElementById('numberB').value;
+        let numberC = +document.getElementById('numberC').value;
+        let max = numberA
+        if ((!(numberA % 1)) && (!(numberB % 1)) && (!(numberC % 1))){
+            if (max < numberB || max < numberC) {
+                if (numberB < numberC) {
                     document.getElementById('result').innerText = 'c là số lớn nhất'
                 } else {
                     document.getElementById('result').innerText = 'b là số lớn nhất'
