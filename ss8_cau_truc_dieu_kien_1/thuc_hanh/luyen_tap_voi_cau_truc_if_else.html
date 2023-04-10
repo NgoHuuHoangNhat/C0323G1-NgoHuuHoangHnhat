@@ -5,8 +5,22 @@
     <title>Luyện Tập Với Cấu Trúc If Elese</title>
 </head>
 <body>
-<label><input type="text" id="question"></label>
-<button type="button" onclick="getValue()"></button>
-<div></div>
+<form action="" method="get">
+<div>“What is the “official” name of JavaScript?</div>
+<label><input type="text" id="answer"></label>
+<button type="button" onclick="getValue()">Result</button>
+<div id="result"></div>
+</form>
 </body>
+<script>
+function getValue(){
+    let answer = document.getElementById('answer').value;
+    if (answer === 'ECMAScript'){
+        document.getElementById('result').innerText = 'Right';
+    }
+    else {
+        document.getElementById('result').innerText = 'Didn’t know? ECMAScript!';
+    }
+}
+</script>
 </html>

@@ -10,13 +10,13 @@
 <form action="/student" method="get">
     <div>
         <label>Tháng <input type="number" id="month" style="width: 30px"></label><br>
-        <button type="button" onclick="getMonth()">Tính Số Ngày</button>
+        <button type="button" onclick="getInfor()">Tính Số Ngày</button>
             <div id="result"></div>
     </div>
 </form>
 </body>
 <script>
-    function getMonth() {
+    function getInfor() {
         let month = +document.getElementById('month').value ;
         switch (month){
             case 1 :
