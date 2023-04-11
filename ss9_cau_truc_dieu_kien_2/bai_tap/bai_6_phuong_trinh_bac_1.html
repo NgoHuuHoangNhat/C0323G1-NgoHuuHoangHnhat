@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương Trình Bậc Nhất</title>
+</head>
+<body>
+<h1>Phương Trình Bậc 1</h1>
+<div>Nhập a <input id="numA" type="number"></div>
+<div>Nhập b <input id="numB" type="number"></div>
+<button type="button" onclick="getValue()">Kết Quả</button>
+<div>Kết quả: <label id="result"></label></div>
+</body>
+<script>
+    function getValue(){
+        let numA = +document.getElementById('numA').value;
+        let numB = +document.getElementById('numB').value;
+        let numX = -numB/numA;
+        if (numA === 0){
+            if(numB ===0){
+                document.getElementById('result').innerText = 'phương trình vô số nghiệm';
+            }
+            else {
+                document.getElementById('result').innerText = 'phương trình vô nghiệm';
+            }
+        }else {
+            document.getElementById('result').innerText = 'x = ' +numX;
+        }
+    }
+</script>
+</html>

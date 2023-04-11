@@ -44,67 +44,76 @@
     <h1>Caculator</h1>
     <form action="" method="get">
         <div class="result">
-            <input type="text" id="abc" name="abc">
+            <input type="text" id="window" name="abc">
         </div>
         <div class="button">
             <div class="row">
-                <input type="button" value="Rad" name="rad" onclick="val(rad.value)">
-                <input type="button" value=" " name="v" onclick="val(v.value)">
-                <input type="button" value="x!" name="redundant" onclick="val(redundant.value)">
-                <input type="button" value="(" name="openparen" onclick="val(openparen.value)">
-                <input type="button" value=")" name="closeparen" onclick="val(closeparen.value)">
-                <input type="button" value="%" name="percent" onclick="val(percent.value)">
-                <input type="button" value="AC" name="AC" onclick="val(AC.value)">
+                <input type="button" value="Rad" onclick="">
+                <input type="button" value=" " onclick="">
+                <input type="button" value="x!" onclick="inputValue('*')">
+                <input type="button" value="(" onclick="">
+                <input type="button" value=")" onclick="">
+                <input type="button" value="%" onclick="">
+                <input type="button" value="AC" onclick="clear()">
             </div>
         </div>
         <div class="button">
             <div class="row">
-                <input type="button" value="lnv" name="lnv" onclick="val(lnv.value)">
-                <input type="button" value="sin" name="sin" onclick="val(sin.value)">
-                <input type="button" value="ln" name="ln" onclick="val(ln.value)">
-                <input type="button" value="7" name="number7" onclick="val(number7.value)">
-                <input type="button" value="8" name="number8" onclick="val(number8.value)">
-                <input type="button" value="9" name="number9" onclick="val(number9.value)">
-                <input type="button" value="/" name="divi" onclick="val(divi.value)">
+                <input type="button" value="lnv" onclick="">
+                <input type="button" value="sin" onclick="">
+                <input type="button" value="ln" onclick="">
+                <input type="button" value="7" onclick="inputValue(7)">
+                <input type="button" value="8" onclick="inputValue(8)">
+                <input type="button" value="9" onclick="inputValue(9)">
+                <input type="button" value="/" onclick="inputValue('/')">
             </div>
         </div>
         <div class="button">
             <div class="row">
-                <input type="button" value="PI" name="pi" onclick="val(pi.value)">
-                <input type="button" value="cos" name="cos" onclick="val(cos.value)">
-                <input type="button" value="log" name="log" onclick="val(log.value)">
-                <input type="button" value="4" name="number4" onclick="val(number4.value)">
-                <input type="button" value="5" name="number5" onclick="val(number5.value)">
-                <input type="button" value="6" name="number6" onclick="val(number6.value)">
-                <input type="button" value="x" name="multi" onclick="val(multi.value)">
+                <input type="button" value="PI" onclick="">
+                <input type="button" value="cos" onclick="">
+                <input type="button" value="log" onclick="">
+                <input type="button" value="4" onclick="inputValue(4)">
+                <input type="button" value="5" onclick="inputValue(5)">
+                <input type="button" value="6" onclick="inputValue(6)">
+                <input type="button" value="x" onclick="inputValue('*')">
             </div>
         </div>
         <div class="button">
             <div class="row">
-                <input type="button" value="e" name="e" onclick="val(e.value)">
-                <input type="button" value="tan" name="tan" onclick="val(tan.value)">
-                <input type="button" value="√" name="squareRoot" onclick="val(squareRoot.value)">
-                <input type="button" value="1" name="number1" onclick="val(number1.value)">
-                <input type="button" value="2" name="number2" onclick="val(number2.value)">
-                <input type="button" value="3" name="number3" onclick="val(number3.value)">
-                <input type="button" value="-" name="subtraction" onclick="val(subtraction.value)">
+                <input type="button" value="e" onclick="">
+                <input type="button" value="tan" onclick="">
+                <input type="button" value="√" onclick="">
+                <input type="button" value="1" onclick="inputValue(1)">
+                <input type="button" value="2" onclick="inputValue(2)">
+                <input type="button" value="3" onclick="inputValue(3)">
+                <input type="button" value="-" onclick="inputValue('-')">
             </div>
         </div>
         <div class="button">
             <div class="row">
-                <input type="button" value="ANS" name="ans" onclick="val(ans.value)">
-                <input type="button" value="EXP" name="exp" onclick="val(exp.value)">
-                <input type="button" value="^" name="exponentiation" onclick="val(exponentiation.value)">
-                <input type="button" value="0" name="number0" onclick="val(number0.value)">
-                <input type="button" value="." name="showdots" onclick="val(showdots.value)">
-                <input type="button" value="=" name="sum" onclick="val(sum.value)">
-                <input type="button" value="+" name="add" onclick="val(add.value)">
+                <input type="button" value="ANS" onclick="">
+                <input type="button" value="EXP" onclick="">
+                <input type="button" value="^" onclick="">
+                <input type="button" value="0" onclick="inputValue(0)">
+                <input type="button" value="." onclick="inputValue('.')">
+                <input type="button" value="=" onclick="Equal()">
+                <input type="button" value="+" onclick="inputValue('+')">
             </div>
         </div>
     </form>
 </div>
 </body>
 <script>
-
+    function inputValue(num){
+        document.getElementById('window').value +=num;
+    }
+    function Equal(){
+        let string = document.getElementById('window').value;
+        document.getElementById('window').value = eval(string);
+    }
+    function clear(){
+        document.getElementById('window').innerHTML = ' ';
+    }
 </script>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Cạnh Tam Giác</title>
+</head>
+<body>
+<h1>Tính Diện Tích Hình Vuông </h1>
+<div>Nhập cạnh hình tam giác <input type="number" id="edge1"></div>
+<div>Nhập cạnh hình tam giác <input type="number" id="edge2"></div>
+<div>Nhập cạnh hình tam giác <input type="number" id="edge3"></div>
+<button type="button" onclick="getValue()">Result</button>
+<div>Kết Quả: <label id="result"></label></div>
+</body>
+<script>
+    function getValue() {
+        let edge1 = +document.getElementById('edge1').value;
+        let edge2 = +document.getElementById('edge2').value;
+        let edge3 = +document.getElementById('edge3').value;
+        if (edge1 > 0 && edge2 > 0 && edge3 > 0) {
+            if (edge1 + edge2 > edge3) {
+                if (edge1 + edge3 > edge2) {
+                    if (edge1 + edge3 > edge2) {
+                        document.getElementById('result').innerText = 'Là 3 cạnh của 1 tam giác';
+                    } else {
+                        document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
+                    }
+                } else {
+                    document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
+                }
+            } else {
+                document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
+        }
+    }
+</script>
+</html>

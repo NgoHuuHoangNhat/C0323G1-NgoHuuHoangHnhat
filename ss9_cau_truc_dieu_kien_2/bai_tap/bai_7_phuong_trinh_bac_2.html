@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương Trình Bậc 2</title>
+</head>
+<body>
+<h1>Phương Trình Bậc 2</h1>
+<div>Nhập a <input id="numA" type="number"></div>
+<div>Nhập b <input id="numB" type="number"></div>
+<div>Nhập c <input id="numC" type="number"></div>
+<button type="button" onclick="getValue()">Kết Quả</button>
+<div>Kết quả: <label id="result"></label></div>
+</body>
+<script>
+    function getValue() {
+        let numA = +document.getElementById('numA').value;
+        let numB = +document.getElementById('numB').value;
+        let numC = +document.getElementById('numC').value;
+        let delta = Math.pow(numB, 2) - 4 * numA * numC;
+        let numX1 = (-numB - Math.sqrt(delta)) / (2 * numA);
+        let numX2 = (-numB + Math.sqrt(delta)) / (2 * numA);
+        let numX3 = -numB / (2 * numA);
+        if (numA === 0) {
+            document.getElementById('result').innerText = 'nhập lại';
+        } else {
+            if (delta < 0) {
+                document.getElementById('result').innerText = 'phương trình vô nghiệm';
+            } else if (delta > 0) {
+                document.getElementById('result').innerText = 'x1 = ' + numX1 + '; x2 = ' + numX2;
+            } else {
+                document.getElementById('result').innerText = 'phương trình có nghiệm kép x1 = x2 = ' + numX3;
+            }
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết Chương Trình Tính Giá Điện</title>
+</head>
+<body>
+<form action="/student" method="get">
+    <label>Lượng Điện Tiêu Thụ(kwh)<input type="number" id="electric"></label><br>
+    <button type="button" onclick="getValue()">Kết quả</button>
+    <br>
+    <div id="result"></div>
+
+</form>
+</body>
+<script>
+    function getValue() {
+        let electric = +document.getElementById('electric').value;
+        let under50Kwh = electric - 50;
+        let under100Kwh = electric - 100;
+        if (electric <= 0) {
+            document.getElementById('result').innerHTML = 0;
+        } else if (electric <= 50) {
+            document.getElementById('result').innerHTML = 'Giá tiền: ' + electric * 1678 + 'đ';
+        } else if (electric <= 100) {
+            document.getElementById('result').innerHTML = 'Giá tiền: ' + (50 * 1678 + under50Kwh * 1734) + 'đ';
+        } else {
+            document.getElementById('result').innerHTML = 'Giá tiền: ' + (50 * 1678 + 50 * 1734 + under100Kwh * 2014) + 'đ';
+        }
+    }
+</script>
+</html>
