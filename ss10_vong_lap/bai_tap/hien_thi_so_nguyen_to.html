@@ -7,21 +7,21 @@
 <body>
 </body>
 <script>
-    let number = +prompt('nhập số lượng số nguyên tố');
-    count1 = 0;
-    j = 2;
-    while (count1 < number) {
+    let size = +prompt('nhập số lượng số nguyên tố');
+    let count1 = 0;
+    let numA = 2;
+    while (count1 < size) {
         let count2 = 0;
-        for (let i = 2; i < j; i++) {
-            if (j % i === 0) {
+        for (let numB = 2; numB < numA; numB++) {
+            if (numA % numB === 0) {
                 count2++;
             }
         }
-            if (count2 === 0){
-                document.write(j + "<br>");
-                count1++;
+        if (count2 === 0) {
+            document.write(numA + "<br>");
+            count1++;
         }
-        j++
+        numA++
     }
 
 
