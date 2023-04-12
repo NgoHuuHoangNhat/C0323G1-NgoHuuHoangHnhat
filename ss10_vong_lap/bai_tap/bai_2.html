@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+</body>
+<script>
+    let info = prompt('Nhập nhiệt độ hiện tại');
+    while (info < 20 || info > 100) {
+        if (info < 20)
+            info=prompt('tăng nhiệt độ');
+        else
+            info=prompt('giảm nhiệt độ');
+    }
+    alert('nhiệt độ hiện tại là ' + info);
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 20 số Fibonacci</title>
+</head>
+<body>
+<script>
+    let numA = 0;
+    let numB = 1;
+    let fibonacci=0;
+    let sum = 0;
+    for (let i = 0; i < 18; i++) {
+        fibonacci = numA + numB;
+        numA = numB;
+        numB = fibonacci;
+        sum += fibonacci;
+    }
+        document.write(sum + '<br>');
+
+</script>
+</body>
+</html>
