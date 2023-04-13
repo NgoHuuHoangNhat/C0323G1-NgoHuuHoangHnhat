@@ -12,20 +12,18 @@
 <div>Kết quả: <label id="result"></label></div>
 </body>
 <script>
-    function getValue(){
+    function getValue() {
         let numA = +document.getElementById('numA').value;
         let numB = +document.getElementById('numB').value;
-        let numX = -numB/numA;
-        if (numA === 0){
-            if(numB ===0){
+        let numX = -numB / numA;
+        if (numA === 0) {
+            if (numB === 0) {
                 document.getElementById('result').innerText = 'phương trình vô số nghiệm';
-            }
-            else {
+            } else {
                 document.getElementById('result').innerText = 'phương trình vô nghiệm';
             }
-        }
-        else {
-            document.getElementById('result').innerText = 'x = ' +numX;
+        } else {
+            document.getElementById('result').innerText = 'x = ' + numX;
         }
     }
 </script>

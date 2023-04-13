@@ -7,21 +7,20 @@
 <body>
 <h1>Tính Diện Tích Hình Chữ Nhật</h1>
 <div>Nhập chiều dài (cm) <input id="length" type="number" style="margin: 9px"></div>
-<div>Nhập chiều rộng (cm) <input id="width" type="number" ></div>
+<div>Nhập chiều rộng (cm) <input id="width" type="number"></div>
 <button type="button" onclick="getValue()">Nhập</button>
 <div>Diện Tích Hình Chữ Nhật: <label id="result"></label></div>
 
 </body>
 <script>
-    function getValue(){
+    function getValue() {
         let length = +document.getElementById('length').value;
         let width = +document.getElementById('width').value;
-        let acreage = length * width
-        if(length>0 && width>0){
+        let acreage = length * width;
+        if (length > 0 && width > 0) {
             document.getElementById('result').innerHTML = acreage + 'cm<sup>2</sup>';
-        }
-        else {
-            document.getElementById('result').innerText = 'Nhập lại'
+        } else {
+            document.getElementById('result').innerText = 'Nhập lại';
         }
     }
 </script>

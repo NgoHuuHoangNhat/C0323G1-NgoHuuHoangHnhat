@@ -12,14 +12,13 @@
 <div>Diện Tích: <label id="result"></label></div>
 </body>
 <script>
-    function getValue(){
+    function getValue() {
         let lenght = +document.getElementById('lenght').value;
         let width = +document.getElementById('width').value;
-        let acreage = lenght*width/2;
-        if(lenght>0 && width>0){
+        let acreage = lenght * width / 2;
+        if (lenght > 0 && width > 0) {
             document.getElementById('result').innerHTML = acreage + 'cm<sup>2</sup>';
-        }
-        else {
+        } else {
             document.getElementById('result').innerText = 'Nhập lại';
         }
     }

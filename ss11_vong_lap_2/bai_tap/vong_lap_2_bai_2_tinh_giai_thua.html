@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Giai Thừa Của 1 Số Nguyên Dương</title>
+</head>
+<body>
+
+</body>
+<script>
+    let num = +prompt('Nhập 1 số')
+    let multi = 1;
+    if (num % 1 === 0) {
+        for (let i = 1; i <= num; i++) {
+            multi *= i;
+        }
+        document.write(multi);
+    }
+</script>
+</html>

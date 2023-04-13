@@ -11,17 +11,15 @@
 <div>Kết quả: <label id="result"></label></div>
 </body>
 <script>
-    function getValue(){
+    function getValue() {
         let age = +document.getElementById('age').value;
-        if(!(age%1)){
-            if(age>0 && age<120){
+        if (!(age % 1)) {
+            if (age > 0 && age < 120) {
                 document.getElementById('result').innerText = 'Là tuổi của 1 người'
-            }
-            else {
+            } else {
                 document.getElementById('result').innerText = 'Không phải tuổi của 1 người'
             }
-        }
-        else {
+        } else {
             document.getElementById('result').innerText = 'Không phải tuổi của 1 người'
         }
     }

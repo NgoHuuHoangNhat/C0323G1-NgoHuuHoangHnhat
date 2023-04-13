@@ -7,9 +7,9 @@
 <body>
 <h1>Tiền Lãi</h1>
 <form action="/student" method="get">
-    <label>Lãi Ngân Hàng(%)<br><input type="number" id="rate" ></label><br>
-    <label>Số Tiền Vay (đ)<br> <input type="number" id="loan" ></label><br>
-    <label>Số Tháng Vay<br><input type="number" id="month" ></label><br>
+    <label>Lãi Ngân Hàng(%)<br><input type="number" id="rate"></label><br>
+    <label>Số Tiền Vay (đ)<br> <input type="number" id="loan"></label><br>
+    <label>Số Tháng Vay<br><input type="number" id="month"></label><br>
     <button type="button" onclick="getValue()">Kết quả</button>
     <br>
     <div id="result"></div>
@@ -21,11 +21,10 @@
         let rate = +document.getElementById('rate').value / 100;
         let loan = +document.getElementById('loan').value;
         let month = +document.getElementById('month').value;
-        let loanInterest =loan * Math.pow((1+rate),month) - loan;
-        if(rate<=0 || loan<=0 || month<=0){
+        let loanInterest = loan * Math.pow((1 + rate), month) - loan;
+        if (rate <= 0 || loan <= 0 || month <= 0) {
             document.getElementById('result').innerText = 'nhập lại';
-        }
-        else {
+        } else {
             document.getElementById('result').innerText = 'Tổng tiền lãi phải trả sau ' + month + ' tháng: ' + loanInterest + 'đ';
         }
     }

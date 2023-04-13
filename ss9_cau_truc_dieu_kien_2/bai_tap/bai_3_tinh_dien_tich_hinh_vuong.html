@@ -5,20 +5,19 @@
     <title>Tính diện tích hình vuông</title>
 </head>
 <body>
-    <h1>Tính Diện Tích Hình Vuông </h1>
-    <label>Nhập cạnh hình vuông (cm) <input type="number" id="edge"></label>
-    <button type="button" onclick="getValue()">Result</button>
-    <div>Diện Tích: <label id="result"></label></div>
-
+<h1>Tính Diện Tích Hình Vuông </h1>
+<label>Nhập cạnh hình vuông (cm) <input type="number" id="edge"></label>
+<button type="button" onclick="getValue()">Result</button>
+<div>Diện Tích: <label id="result"></label></div>
 </body>
 <script>
-    function getValue(){
+    function getValue() {
         let edge = +document.getElementById('edge').value;
-        let acreage = Math.pow(edge,2)
-        if(edge>0){
+        let acreage = Math.pow(edge, 2);
+        if (edge > 0) {
+            ;
             document.getElementById('result').innerHTML = acreage + 'cm<sup>2</sup>';
-        }
-        else {
+        } else {
             document.getElementById('result').innerT2ext = 'cạnh hình vuông phải lớn hơn 0';
         }
     }

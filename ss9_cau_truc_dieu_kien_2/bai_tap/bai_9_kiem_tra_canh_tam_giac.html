@@ -17,20 +17,13 @@
         let edge1 = +document.getElementById('edge1').value;
         let edge2 = +document.getElementById('edge2').value;
         let edge3 = +document.getElementById('edge3').value;
-        if (edge1 > 0 && edge2 > 0 && edge3 > 0) {
-            if (edge1 + edge2 > edge3) {
-                if (edge1 + edge3 > edge2) {
-                    if (edge1 + edge3 > edge2) {
-                        document.getElementById('result').innerText = 'Là 3 cạnh của 1 tam giác';
-                    } else {
-                        document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
-                    }
-                } else {
-                    document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
-                }
-            } else {
-                document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
-            }
+        let a = edge1 + edge2;
+        let b = edge1 + edge3;
+        let c = edge2 + edge3;
+        if (a > edge3 && b > edge2 && c > edge1) {
+            document.getElementById('result').innerText = 'Là 3 cạnh của 1 tam giác';
+        } else if (edge1 < 0 || edge2 < 0 || edge3 < 0) {
+            document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
         } else {
             document.getElementById('result').innerText = 'Không phải 3 cạnh của 1 tam giác';
         }
