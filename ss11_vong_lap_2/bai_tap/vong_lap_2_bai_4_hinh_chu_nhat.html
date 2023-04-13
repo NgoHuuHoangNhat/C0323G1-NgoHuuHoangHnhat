@@ -6,22 +6,16 @@
 </head>
 <body>
 <script>
-    let chieuDai = '';
-    let chieuDaiRong = '';
-    for (let i = 0; i < 20; i++) {
-        chieuDai += '*';
-        if (i === 0 || i === 19) {
-            chieuDaiRong += '*';
-        } else {
-            chieuDaiRong += '&nbsp;&nbsp;';
+
+    for (let i = 0; i <= 10; i++) {
+        for (let j = 0; j <= 20; j++) {
+            if (i === 0 || j === 0 || i === 10 || j === 20) {
+                document.write("*");
+            } else {
+                document.write('&nbsp;&nbsp;');
+            }
         }
-    }
-    for (let j = 0; j < 5; j++) {
-        if (j === 0 || j === 4) {
-            document.write(chieuDai+'<br>');
-        } else {
-            document.write(chieuDaiRong+'<br>');
-        }
+        document.write('<br>');
     }
 </script>
 
