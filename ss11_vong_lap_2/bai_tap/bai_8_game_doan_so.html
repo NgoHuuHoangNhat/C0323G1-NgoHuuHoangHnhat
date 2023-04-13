@@ -7,5 +7,24 @@
 <body>
 
 </body>
-
+<script>
+    let sizeMin = +prompt('Nhập khoảng dự đoán từ...');
+    let sizeMax = +prompt('Nhập khoảng dự đoán đến...');
+    let comRandom = +Math.floor(Math.random() * (sizeMax - sizeMin) + sizeMin);
+    let number = +prompt('Nhập số dự đoán');
+    let count = 0;
+    for (let i = 0; ; i++) {
+        if (number === comRandom) {
+            document.write('Bạn đã dự đoán đúng');
+            break;
+        } else {
+            prompt('Đoán Lại');
+        }
+        count++;
+        if (count >= 4) {
+            document.write('Bạn đã hết lượt đoán');
+            break;
+        }
+    }
+</script>
 </html>

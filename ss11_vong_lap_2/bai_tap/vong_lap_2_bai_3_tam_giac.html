@@ -11,21 +11,54 @@
     let text1 = '';
     for (let i = 0; i < 5; i++) {
         text1 += "*";
-        document.write(text1 + '<br>')
+        document.write(text1 + '<br>');
     }
+
+
+    document.write('<br>'); //khoảng cách giữa 2 hình
 
 
     //Tam Giác 2
 
-    for (let i = 5; i >= 1; i--) {
-        let text2 = '';
+    for (let i = 5; i > 0; i--) {
+        let text = '';
         for (let j = 0; j < i; j++) {
-            text2 += '*';
+            text += '*';
         }
-        document.write(text2+'<br>')
+        document.write(text + '<br>');
     }
 
+
+    document.write('<br>'); //khoảng cách giữa 2 hình
+
+
     // Tam Giác 3
+    for (let i = 5; i > 0; i--) {
+        for (let j = 1; j <= 5; j++) {
+            if (j < i) {
+                document.write('&nbsp;&nbsp;');
+            } else {
+                document.write('*');
+            }
+        }
+        document.write('<br>');
+    }
+
+
+    document.write('<br>'); //khoảng cách giữa 2 hình
+
+
+    // Tam Giác 4
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            if (j < i) {
+                document.write('&nbsp;&nbsp;');
+            } else {
+                document.write('*');
+            }
+        }
+        document.write('<br>');
+    }
 
 </script>
 </html>
