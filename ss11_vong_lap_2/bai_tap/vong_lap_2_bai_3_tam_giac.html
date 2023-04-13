@@ -8,10 +8,15 @@
 </body>
 <script>
     // Tam Giác 1
-    let text1 = '';
     for (let i = 0; i < 5; i++) {
-        text1 += "*";
-        document.write(text1 + '<br>');
+        for (let j = 0; j < 5; j++) {
+            if (j <= i) {
+                document.write('*');
+            } else {
+                document.write('&nbsp;&nbsp;');
+            }
+        }
+        document.write('<br>');
     }
 
 
@@ -21,11 +26,14 @@
     //Tam Giác 2
 
     for (let i = 5; i > 0; i--) {
-        let text = '';
-        for (let j = 0; j < i; j++) {
-            text += '*';
+        for (let j = 0; j < 5; j++) {
+            if (j < i) {
+                document.write('*');
+            } else {
+                document.write('&nbsp;&nbsp;');
+            }
         }
-        document.write(text + '<br>');
+        document.write('<br>');
     }
 
 
@@ -59,6 +67,8 @@
         }
         document.write('<br>');
     }
+
+
 
 </script>
 </html>
