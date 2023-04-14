@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let i = 0;
+    while (i < 10) {
+        let a = +prompt(' nhập số a');
+        if (a % 1 === 0) {
+            arr.push(a);
+            i++;
+        }
+    }
+    document.write("Mảng là " + arr + '<br>');
+    let numV = +prompt('nhập V');
+    for (let i = 0; i < arr.length; i++) {
+        if (numV === arr[i]) {
+            arr.splice(i, 1);
+            document.write("Số V là " + numV + '<br>');
+            document.write("Mảng sau khi loại số V là " + arr);
+            break;
+        } else if (numV > arr.length) {
+            document.write("V is not in the array");
+            break;
+        }
+    }
+
+</script>
+</body>
+</html>

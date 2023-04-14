@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<script>
+    let word = prompt('nhập 1 từ tiếng anh');
+    let dictionaryEng = ['car', 'home', 'school', 'class'];
+    let dictionaryViet = ['xe hơi', 'nhà', 'trường', 'lớp'];
+    let result = [];
+    for (let i = 0; i < dictionaryEng.length; i++) {
+        if (word === dictionaryEng[i]) {
+            document.write(dictionaryEng[i] + ' nghĩa tiếng việt là ' + dictionaryViet[i]);
+        }
+    }
+
+</script>
+</body>
+</html>

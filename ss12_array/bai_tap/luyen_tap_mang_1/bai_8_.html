@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let i = 0;
+    while (i < 10) {
+        let a = +prompt(' nhập số a');
+        if (a % 1 === 0) {
+            arr.push(a);
+            i++;
+        }
+    }
+    document.write('Mảng sau khi nhập là '+arr+"<br>");
+    arr.sort(function (a, b) {return a - b});
+    document.write('Mảng sau khi sắp xếp là '+arr);
+</script>
+</html>
