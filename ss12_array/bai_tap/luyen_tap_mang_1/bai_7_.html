@@ -17,18 +17,16 @@
     }
     document.write("Mảng là " + arr + '<br>');
     let numV = +prompt('nhập V');
-    let j = 0
-    for ( j = 0; j < arr.length; j++) {
+    let j = 0;
+    for (j = 0; j < arr.length; j++) {
         if (numV === arr[j]) {
             arr.splice(j, 1);
             document.write("Số V là " + numV + '<br>');
             document.write("Mảng sau khi loại số V là " + arr);
             break;
-            // } else if (j === arr.length) {
-            //     document.write("V is not in the array");
-            //     break;
         }
-    }if (j === arr.length) {
+    }
+    if (j === arr.length) {
         document.write("V is not in the array");
     }
 
