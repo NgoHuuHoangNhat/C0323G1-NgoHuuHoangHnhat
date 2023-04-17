@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let arrLength = +prompt('nhập vào số lượng kí tự');
+    for (let i = 0; i < arrLength; i++) {
+        do {
+            arr[i] = prompt('nhập vào' + (i + 1));
+            if (arr[i] === '-') {
+                arr[i] = '_';
+            }
+        } while (arr[i].length > 1);
+    }
+    document.write('Mảng sau ' + arr);
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

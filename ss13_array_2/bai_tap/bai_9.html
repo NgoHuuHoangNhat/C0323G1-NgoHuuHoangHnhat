@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrA = [];
+    let arrB = [];
+    let arrC = [];
+    let i = 0;
+    while (i < 20) {
+        let num = prompt('nhập số 1 số ');
+        if (num % 1 === 0 && i < 10) {
+            arrA.push(num);
+            i++;
+        } else if (num % 1 === 0 && i < 20) {
+            arrB.push(num);
+            i++;
+        }
+    }
+    arrC = arrA.concat(arrB);
+    document.write('Mảng A là ' + arrA + '<br>');
+    document.write('Mảng B là ' + arrB + '<br>');
+    document.write('Mảng C là ' + arrC);
+
+</script>
+</html>

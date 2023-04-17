@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let arrLength = +prompt('nhập vào số lượng kí tự');
+    let i = 0;
+    do {
+        let a = prompt('nhập vào ký tự thứ ' + (i + 1));
+        if (a.length < 2) {
+            arr.push(a);
+            i++;
+        }
+    } while (i < arrLength);
+    let arr1 = arr.reverse();
+    document.write(arr1.join(''));
+</script>
+</html>
