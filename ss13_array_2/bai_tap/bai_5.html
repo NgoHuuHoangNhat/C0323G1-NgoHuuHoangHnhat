@@ -8,12 +8,22 @@
 
 </body>
 <script>
-    let strA = prompt('Nhập chuỗi A');
-    let strB = prompt('Nhập chuỗi B');
-    if (strA === strB) {
-        document.write('Chuỗi A giống chuỗi B');
-    } else {
-        document.write('Chuỗi A không giống chuỗi B');
+    let arrA = prompt('Nhập chuỗi A').split(' ');
+    let arrB = prompt('Nhập chuỗi B').split(' ');
+    document.write('Chuỗi A là: ' + arrA.join(' ') + '<br>');
+    document.write('Chuỗi B là: ' + arrB.join(' ') + '<br>');
+    let count = 0;
+    for (let i = 0; i < arrA.length; i++) {
+        if (arrA.length === arrB.length && arrA[i] === arrB[i]) {
+            count += 1;
+        } else {
+            document.write('Chuỗi A không giống chuỗi B');
+        }
     }
+    if (count === arrA.length) {
+        document.write('chuỗi A giống chuỗi B');
+    }
+
+
 </script>
 </html>
