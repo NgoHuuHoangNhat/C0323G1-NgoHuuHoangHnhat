@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm 1 Bài 2</title>
+</head>
+<body>
+<div>Nhập số a <input type="number" id="numberA"></div>
+<div>Nhập số b <input type="number" id="numberB"></div>
+<button type="button"
+        onclick="getValue(+document.getElementById('numberA').value,+document.getElementById('numberB').value)">Result
+</button>
+<div id="result"></div>
+</body>
+<script>
+
+    function getValue(a, b) {
+        if (a > b) {
+            document.getElementById('result').innerHTML = 'Số a lớn hơn số b';
+        } else if (a === b) {
+            document.getElementById('result').innerHTML = 'Số a bằng số b, tổng 2 số là ' + (a + b);
+        } else {
+            document.getElementById('result').innerHTML = 'Số a bé hơn số b, tổng 2 số là ' + (a + b);
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm chòm sao cho ngôi sao</title>
+</head>
+<body>
+
+<div id="result"></div>
+</body>
+<script>
+    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let groupStar = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function findConstellation(name) {
+        let i = 0;
+        while (i < star.length) {
+            if (name === star[i]) {
+                return 'Ngôi sao ' + star[i] + ' thuộc chòm sao ' + groupStar[i];
+            }
+            i++;
+        }
+        if (i === star.length) {
+            return 'Không tìm thấy chòm sao nào chứa ngôi sao ' + name;
+        }
+    }
+
+    document.getElementById('result').innerHTML = findConstellation(prompt('nhập vào ngôi sao bạn cần tìm'));
+</script>
+</html>

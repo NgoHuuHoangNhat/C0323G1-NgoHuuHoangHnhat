@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Diện Tích, Chu Vi Hình Tròn</title>
+</head>
+<body>
+<div><input type="number" id="radius"></div>
+<button type="button" onclick="calculatorCircle()">Result</button>
+<div id="result"></div>
+
+</body>
+<script>
+    const PI = 3.14;
+
+    function calculatorCircle() {
+        let radius = +document.getElementById('radius').value;
+        let acreagea = radius * radius * PI;
+        let perimeter = radius * 2 * PI;
+        document.getElementById('result').innerHTML = 'Diện tích hình chữ nhật là ' + acreagea + '<br>' + 'Chu vi hình chữ nhật là ' + perimeter;
+    }
+</script>
+</html>

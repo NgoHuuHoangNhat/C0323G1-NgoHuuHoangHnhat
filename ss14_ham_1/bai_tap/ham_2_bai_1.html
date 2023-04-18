@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Bình Phương của 1 số bất kì</title>
+</head>
+<body>
+<div><input type="number" id="number"></div>
+<button type="button" onclick="calculateSquare()">Result</button>
+<div>Kết Quả</div>
+<div id="result"></div>
+</body>
+<script>
+    function calculateSquare() {
+        let num = +document.getElementById("number").value;
+        document.getElementById('result').innerHTML = 'Bình phương là ' + num * num;
+    }
+</script>
+</html>
