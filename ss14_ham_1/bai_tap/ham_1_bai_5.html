@@ -11,6 +11,7 @@
 <script>
     let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
     let groupStar = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let nameStar = prompt('Nhập ngôi sao bạn cần tìm')
 
     function findConstellation(name) {
         let i = 0;
@@ -25,6 +26,6 @@
         }
     }
 
-    document.getElementById('result').innerHTML = findConstellation(prompt('nhập vào ngôi sao bạn cần tìm'));
+    document.getElementById('result').innerHTML = findConstellation(nameStar);
 </script>
 </html>
