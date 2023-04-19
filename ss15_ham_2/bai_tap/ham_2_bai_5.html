@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm 2 Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numA = +prompt('nhập số a');
+    let numB = +prompt('nhập số b');
+    let numC = +prompt('nhập số c');
+
+    testNumber(numA, numB, numC);
+
+    function testNumber(a, b, c) {
+        let min = a;
+        if (a % 1 === 0 && b % 1 === 0 && c % 1 === 0) {
+            if (b < min) {
+                min = b;
+                if (c < min) {
+                    min = c;
+                }
+            }
+        }else {
+            alert('không phải số nguyên tố')
+        }
+        alert(min)
+    }
+</script>
+</html>

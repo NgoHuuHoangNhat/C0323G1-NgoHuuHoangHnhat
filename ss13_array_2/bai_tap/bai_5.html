@@ -8,19 +8,20 @@
 
 </body>
 <script>
-    let arrA = prompt('Nhập chuỗi A').split(' ');
-    let arrB = prompt('Nhập chuỗi B').split(' ');
-    document.write('Chuỗi A là: ' + arrA.join(' ') + '<br>');
-    document.write('Chuỗi B là: ' + arrB.join(' ') + '<br>');
+    let strA = prompt('Nhập chuỗi A');
+    let strB = prompt('Nhập chuỗi B');
+    document.write('Chuỗi A là: ' + strA + '<br>');
+    document.write('Chuỗi B là: ' + strB + '<br>');
     let count = 0;
-    for (let i = 0; i < arrA.length; i++) {
-        if (arrA.length === arrB.length && arrA[i] === arrB[i]) {
+    for (let i = 0; i < strA.length; i++) {
+        if (strA.length === strB.length && strA[i] === strB[i]) {
             count += 1;
         } else {
             document.write('Chuỗi A không giống chuỗi B');
+            break;
         }
     }
-    if (count === arrA.length) {
+    if (count === strA.length) {
         document.write('chuỗi A giống chuỗi B');
     }
 
