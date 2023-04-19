@@ -8,10 +8,22 @@
 
 </body>
 <script>
-    arr = [];
-    testArr();
-    function testArr(x){
+    let numA = prompt('nhập số a');
+    let numB = prompt('nhập số b');
+    document.write('Trước khi đổi chỗ ' + numA + ', ' + numB + '<br>');
+    document.write(swapNumber(numA, numB));
 
+    function swapNumber(a, b) {
+        if (isNaN(a) || isNaN(b) || a === '' || b === ' ') {
+            return a + ',' + b + ' không phải là số';
+        } else {
+            let temp = a;
+            a = b;
+            b = temp;
+            return 'Sau khi đổi chỗ' + a + ', ' + b;
+        }
+        2
     }
+
 </script>
 </html>

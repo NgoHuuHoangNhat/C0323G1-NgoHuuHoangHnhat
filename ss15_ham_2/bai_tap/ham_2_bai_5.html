@@ -8,25 +8,24 @@
 
 </body>
 <script>
-    let numA = +prompt('nhập số a');
-    let numB = +prompt('nhập số b');
-    let numC = +prompt('nhập số c');
-
-    testNumber(numA, numB, numC);
+    let numA = prompt('nhập số a');
+    let numB = prompt('nhập số b');
+    let numC = prompt('nhập số c');
+    alert(testNumber(numA, numB, numC));
 
     function testNumber(a, b, c) {
-        let min = a;
-        if (a % 1 === 0 && b % 1 === 0 && c % 1 === 0) {
-            if (b < min) {
-                min = b;
-                if (c < min) {
-                    min = c;
+        let arr = [a, b, c];
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (!isNaN(arr[i]) && arr[i] !== '' && arr[i] !== ' ') {
+                if (min > arr[i] && arr[i]) {
+                    min = arr[i];
                 }
+            } else {
+                return 'không phải là số'
             }
-        }else {
-            alert('không phải số nguyên tố')
         }
-        alert(min)
+        return min + ' là số bé nhất';
     }
 </script>
 </html>

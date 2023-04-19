@@ -9,19 +9,28 @@
 </body>
 <script>
     let arr = [];
-    let arrLength = +prompt('Nhập số lượng số nguyên')
-    testArr(arrLength)
+    document.write(reverseArr(enterArr(arr)));
 
-    function testArr(num) {
-        let i = 0;
-        do {
-            let num = +prompt('nhập 1 số');
-            if (num % 1 === 0) {
+    function enterArr(x) {
+        let numberOfInteger = +prompt('nhập vào số lượng số');
+        for (let i = 0; i < numberOfInteger; i++) {
+            let num = prompt('nhập số');
+            if (!isNaN(num) && num !== '' && num !== ' ') {
                 arr.push(num);
-                i++;
+            } else {
+                return 'không phải là số';
             }
-        } while (i < 5)
-        arr.reverse();
+        }
+        return x;
+    }
+
+    function reverseArr(x) {
+        for (let j = 0; j < (arr.length / 2); j++) {
+            let temp = arr[j];
+            arr[j] = arr[arr.length - 1 - j];
+            arr[arr.length - 1 - j] = temp;
+        }
+        return x;
     }
 </script>
 </html>

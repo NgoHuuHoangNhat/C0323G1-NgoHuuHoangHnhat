@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Làm Thêm 2</title>
+</head>
+<body>
+
+<script>
+    let num = prompt('nhập phân số');
+    let arr = num.split('');
+    testArr(arr)
+
+    function testArr() {
+        let count = 0;
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === '/') {
+                if (arr[i] % 1 === 0) {
+                    count++;
+                }
+            }
+        }
+        console.log(count)
+        // if (count === 1) {
+        //     flag = true;
+        // }
+    }
+
+</script>
+</body>
+</html>

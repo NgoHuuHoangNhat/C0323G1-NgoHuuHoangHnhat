@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm 2 Bài 9</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    enterArr(arr);
+    let check = prompt('nhập vào kí cần kiểm tra tự');
+    testCharacters(check);
+
+    function enterArr(x) {
+        num = +prompt('nhập vào số lượng kí tự');
+        for (let j = 0; j < num; j++) {
+            str = prompt('nhập vào 1 kí tự')
+            if (str.length === 1) {
+                arr.push(str);
+            }
+        }
+    }
+
+
+    function testCharacters(x) {
+        let flag = false;
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (check === arr[i]) {
+                flag = true;
+                count++;
+            }
+        }
+        if (flag) {
+            alert('Kí tự ' + check + ' trả về ' + count + ' lần');
+        } else {
+            alert('-1');
+        }
+    }
+
+
+</script>
+</html>

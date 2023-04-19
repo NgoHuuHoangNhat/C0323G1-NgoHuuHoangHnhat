@@ -9,23 +9,19 @@
 </body>
 <script>
 
-    let num = prompt();
-    testNumber(num);
+    let str = prompt('nhập 1 kí tự');
+    testNumber(str);
 
-    function testNumber(num) {
-
-        if (num.length === 1) {
-            if (!isNaN(num) === true) {
+    function testNumber(str) {
+        if (str.length === 1 && str !== '' && str !== ' ') {
+            if (!isNaN(str) === true) {
                 alert('true');
             } else {
                 alert('false');
             }
-
         } else {
             alert('không phải kí tự');
         }
-
-
     }
 
 
