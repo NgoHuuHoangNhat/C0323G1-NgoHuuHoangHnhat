@@ -5,7 +5,7 @@
     <title>Xây dựng lớp hình chữ nhật</title>
 </head>
 <body>
-<canvas id="myCanvas" width="500" height="300" ></canvas>
+<canvas id="myCanvas" width="300" height="100"></canvas>
 </body>
 <script>
 
@@ -16,13 +16,11 @@
         }
 
         calculatorAcreage() {
-            let acreage = this.length * this.width;
-            document.write('Diện tích hình chữ nhật là ' + acreage + ' int<sup>2</sup>' + '<br>');
+            return this.length * this.width;
         }
 
         calculatorPerimeter() {
-            let acreage = (this.length + this.width) * 2;
-            document.write('Chu vi hình chữ nhật là ' + acreage + ' int' + '<br>');
+            return (this.length + this.width) * 2;
         }
 
         isDrawRectangle(x, y) {
@@ -34,19 +32,14 @@
     }
 
     let rectangle = new Rectangle(10, 5);
-    //Trước khi đổi
-    document.write('<br>')
-    rectangle.calculatorAcreage();
-    rectangle.calculatorPerimeter();
     rectangle.isDrawRectangle(0, 0);
-
-    //Sau khi đổi
+    document.write('<br>');
+    document.write('Diện tích hình chữ nhật: ' + rectangle.calculatorAcreage() + '<br>');
+    document.write('Chu vi hình chữ nhật: ' + rectangle.calculatorPerimeter() + '<br>');
     rectangle.width = 100;
     rectangle.length = 50;
-    rectangle.isDrawRectangle(50, 60);
-    rectangle.calculatorAcreage();
-    rectangle.calculatorPerimeter();
-
-
+    rectangle.isDrawRectangle(30, 30);
+    document.write('Diện tích hình chữ nhật: ' + rectangle.calculatorAcreage() + '<br>');
+    document.write('Chu vi hình chữ nhật: ' + rectangle.calculatorPerimeter() + '<br>');
 </script>
 </html>
