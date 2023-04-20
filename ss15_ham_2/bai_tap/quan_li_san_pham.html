@@ -5,22 +5,49 @@
     <title>Quản Lý Sản Phẩm</title>
 </head>
 <body>
-<table style="border-collapse: collapse" border="1">
-    <tr>
-        <td>Product Name</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Sony</td>
-        <td>Edit</td>
-        <td>Delete</td>
-    </tr>
-</table>
+<div><input type="text" id="name"></div>
+<button onclick="add()">Nhập vào</button>
+<div id="result"></div>
 </body>
 <script>
-    function display(){
-        tableStr =
+    let productList = ['sony', 'samsung', 'nokia', 'apple'];
+    display();
+
+    function add() {
+        let name = document.getElementById('name').value;
+        if (name !== '') {
+            productList.push(name);
+        } else {
+            alert('Cần nhập tên sp');
+        }
+        display();
+    }
+
+    function deleteProduct(index) {
+        let conf = confirm('bạn có muốn xoá sp' + productList[index]);
+        if (conf) {
+            productList.splice(index, 1);
+        }
+        display();
+    }
+
+    function display() {
+        let tableStr = '<table style="border-collapse: collapse" border="1">\n' +
+            '    <tr>\n' +
+            '        <td>Product Name</td>\n' +
+            '        <td></td>\n' +
+            '        <td></td>\n' +
+            '    </tr>\n' +
+            '    <tr>';
+        for (let i = 0; i < productList.length; i++) {
+            tableStr += '<tr>\n' +
+                '        <td>' + productList[i] + '</td>\n' +
+                '        <td>' + '<button>Edit</button>' + '</td>\n' +
+                '        <td>' + '<button onclick="deleteProduct(' + i + ')">Delete</button>' + '</td>\n' +
+                '    </tr>';
+        }
+        tableStr += '</table>';
+        document.getElementById('result').innerHTML = tableStr;
     }
 </script>
 </html>
