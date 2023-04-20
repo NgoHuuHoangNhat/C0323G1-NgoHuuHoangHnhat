@@ -14,18 +14,18 @@
             this.c = c;
         }
 
-        fromCToFAndK() {
+        convertCToFAndK() {
             if (this.c >= -273) {
                 let f = this.c * 9 / 5 + 32;
                 let k = this.c + 273.15;
                 return 'Giá trị đổi sang độ F: ' + f + '<br>' + 'Giá trị đổi sang độ F: ' + k;
             } else {
-                return 'Giá trị nhập vào không thoả mãn (là kí tự hoặc bé hơn -273)';
+                return 'Giá trị nhập vào không thoả mãn (là kí tự khác số hoặc bé hơn -273)';
             }
         }
     }
 
     let temperature = new Temperature(+prompt('nhập nhiệt độ hiện tại'));
-    document.write(temperature.fromCToFAndK());
+    document.write(temperature.convertCToFAndK());
 </script>
 </html>

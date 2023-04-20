@@ -15,11 +15,11 @@
             this.length = l;
         }
 
-        calculatorAcreage() {
+        calculateAcreage() {
             return this.length * this.width;
         }
 
-        calculatorPerimeter() {
+        calculatePerimeter() {
             return (this.length + this.width) * 2;
         }
 
@@ -34,12 +34,12 @@
     let rectangle = new Rectangle(10, 5);
     rectangle.isDrawRectangle(0, 0);
     document.write('<br>');
-    document.write('Diện tích hình chữ nhật: ' + rectangle.calculatorAcreage() + '<br>');
-    document.write('Chu vi hình chữ nhật: ' + rectangle.calculatorPerimeter() + '<br>');
+    document.write('Diện tích hình chữ nhật: ' + rectangle.calculateAcreage() + '<br>');
+    document.write('Chu vi hình chữ nhật: ' + rectangle.calculatePerimeter() + '<br>');
     rectangle.width = 100;
     rectangle.length = 50;
     rectangle.isDrawRectangle(30, 30);
-    document.write('Diện tích hình chữ nhật: ' + rectangle.calculatorAcreage() + '<br>');
-    document.write('Chu vi hình chữ nhật: ' + rectangle.calculatorPerimeter() + '<br>');
+    document.write('Diện tích hình chữ nhật: ' + rectangle.calculateAcreage() + '<br>');
+    document.write('Chu vi hình chữ nhật: ' + rectangle.calculatePerimeter() + '<br>');
 </script>
 </html>
