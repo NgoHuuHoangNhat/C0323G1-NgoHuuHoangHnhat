@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+<div><input type="text" id="textingMess"></div>
+</body>
+<script>
+    class Mobile {
+        constructor(Battery) {
+            this.Battery = Battery;
+            this.composingMess = [];
+            this.inbox = [];
+            this.messSent = [];
+        }
+
+        testMobileOnOff() {
+            if (this.Battery > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        onOrOffMoblie(mobileOn) {
+            if (this.Battery > 0 && mobileOn === true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        refillBattery() {
+            if(this.Battery <20){
+                alert('Hãy cắm sạc');
+            }
+
+        }
+
+        textingMess() {
+            let text = document.getElementById('textingMess').value;
+            this.composingMess.push(text)
+        }
+
+        receiveMess() {
+
+        }
+
+        sendMess() {
+
+        }
+
+        readInbox() {
+
+        }
+
+        readMessSent() {
+
+        }
+
+        batteryDrain() {
+
+        }
+
+        mobileOff() {
+
+        }
+
+
+    }
+</script>
+</html>

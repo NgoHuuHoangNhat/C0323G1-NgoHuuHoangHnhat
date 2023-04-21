@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Tương Tác Giữa Công Tắc Và Bóng Đèn</title>
+</head>
+<body>
+
+</body>
+<script>
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+    }
+
+    class SwitchButton {
+        constructor(lamp, status) {
+            this.lamp = lamp;
+            this.status = status;
+        }
+
+        setButtonOn() {
+            this.lamp.status = true;
+            return this.status = true;
+        }
+
+        setButtonOff() {
+            this.lamp.status = false;
+            return this.status = false;
+        }
+
+    }
+
+    let electricLamp = new ElectricLamp(false);
+    let switchButton = new SwitchButton(electricLamp, false);//Kết nối công tắc và bóng đèn
+
+
+    //Bật đèn
+    document.write('Công tắc: ' + switchButton.setButtonOn() + '<br>');
+    document.write('Đèn: ' + electricLamp.getStatus() + '<br>' + '<b> ĐÈN SÁNG</b>' + '<br><br>');
+
+
+    //Tắt đèn
+    document.write('Công tắc: ' + switchButton.setButtonOff() + '<br>');
+    document.write('Đèn: ' + electricLamp.getStatus() + '<br>' + '<b> ĐÈN ĐÃ TẮT</b>' + '<br><br>');
+
+
+    //Bật tắt công tắc 10 lần
+    document.write('<h3>Bật Tắt Công Tắc 10 lần</h3>');
+    for (let i = 0; i < 5; i++) {
+        document.write('Công tắc: ' + switchButton.setButtonOn() + '<br>');
+        document.write('Đèn: ' + electricLamp.getStatus() + '<br>' + '<b> ĐÈN SÁNG</b>' + '<br><br>');
+        document.write('Công tắc: ' + switchButton.setButtonOff() + '<br>');
+        document.write('Đèn: ' + electricLamp.getStatus() + '<br>' + '<b> ĐÈN ĐÃ TẮT</b>' + '<br><br>');
+    }
+
+
+</script>
+</html>

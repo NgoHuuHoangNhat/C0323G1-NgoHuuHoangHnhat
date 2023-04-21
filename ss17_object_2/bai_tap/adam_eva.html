@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam Eva</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            return this.weight === 0;
+        }
+
+        decreaseApple() {
+            return this.weight--;
+
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        saySomethings() {
+            return this.name;
+        }
+
+        eatApple(apple) {
+            if (!apple.isEmpty()) {
+                apple.decreaseApple();
+                this.weight++;
+            }
+        }
+
+    }
+
+    let apple = new Apple(10);
+    let adam = new Human('Adam', 'Male', 70);
+    let eva = new Human('Eva', 'Female', 50);
+
+    //Human nói 1 chuỗi từ
+    document.write('Tôi tên là: ' + adam.saySomethings() + '<br>' + 'Giới tính: ' + adam.getGender() + ', Cân nặng: ' + adam.getWeight() + '<br>');
+    document.write('Tôi tên là: ' + eva.saySomethings() + '<br>' + 'Giới tính: ' + eva.getGender() + ', Cân nặng: ' + eva.getWeight() + '<br>');
+    document.write('<br><br>');
+    document.write('Số quả táo là: ' + apple.getWeight() + '<br><br>');
+
+
+    //Human biết ăn táo và kiểm tra Khối lượng của quả táo
+    while (!apple.isEmpty()) {
+        adam.eatApple(apple);
+        document.write(adam.getName() + ' ăn táo' + '<br>' + ' Số táo còn lại là: ' + apple.getWeight() + '<br>');
+        document.write('Cân nặng của ' + adam.getName() + ' là: ' + adam.getWeight() + '<br><br>');
+        eva.eatApple(apple);
+        document.write(eva.getName() + ' ăn táo' + '<br>' + ' Số táo còn lại là: ' + apple.getWeight() + '<br>');
+        document.write('Cân nặng của ' + eva.getName() + ' là: ' + eva.getWeight() + '<br><br>');
+    }
+
+</script>
+</html>
