@@ -6,19 +6,27 @@
 </head>
 <body>
 
+
 </body>
 <script>
-    let str1 = prompt('nhập chuỗi 1');
-    let str2 = prompt('nhập chuỗi 2');
-    let arr = [];
-    for (let i = 0; i < str2.length; i++) {
-        if (str1.includes(str2[i])) {
-            if (!arr.includes(str2[i])) {
-                arr.push(str2[i]);
+
+    let str1 = prompt('Nhập chuỗi 1');
+    let str2 = prompt('Nhập chuỗi 2');
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+    let count = 0;
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                arr2.splice(j, 1)
+                count++;
+                break;
             }
         }
     }
-    document.write('2 Chuỗi có ' + arr.length + ' kí tự chung là: ' + arr);
+    document.write('Chuỗi 1 là: ' + str1 + '<br>');
+    document.write('Chuỗi 2 là: ' + str2 + '<br>');
+    document.write('Số lượng kí tự chung là: ' + count);
 
 </script>
 </html>

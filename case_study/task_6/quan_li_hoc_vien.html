@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí học viên</title>
+</head>
+<body>
+<label><input type="button" onclick="" value="Thêm mới học viên"></label>
+<label><input type="button" onclick="" value="Sửa thông tin học viên"></label>
+<label><input type="button" onclick="" value="Xoá học viên"></label>
+<div id="result"></div>
+</body>
+<script>
+
+    let studentList = ['Nguyễn Văn A', 'Nguyễn Thị B', 'Nguyễn Văn C'];
+
+    function addStudent() {
+        let student = ''
+    }
+
+    function display() {
+        let strTable = '<table border="1" style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <td width="150px" height="25px">Mã học viên</td>\n' +
+            '        <td width="100px" height="25px">Tên</td>\n' +
+            '        <td width="100px" height="25px">Lớp</td>\n' +
+            '        <td width="100px" height="25px">Email</td>\n' +
+            '        <td width="100px" height="25px">Ngày sinh</td>\n' +
+            '    </tr>';
+        for (let i = 0; i < studentList.length; i++) {
+            strTable += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + studentList[i] + '</td>\n' +
+                '        <td>C0323G1</td>\n' +
+                '        <td>nguyenvana@gmail.com</td>\n' +
+                '        <td>01/01/1996</td>\n' +
+                '    </tr>';
+        }
+        strTable += '</table>';
+        document.getElementById('result').innerHTML = strTable;
+    }
+
+    display();
+</script>
+</html>
