@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Hàm</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let index = +prompt('nhâp số lượng chuỗi (Số chẵn)');
+    if (index % 2 === 0) {
+        for (let i = 0; i < index; i++) {
+            let str = +prompt('nhập chuỗi');
+            arr.push(str);
+        }
+    } else {
+        alert('Số phần tử phải là số chẵn');
+    }
+
+    function checkArr() {
+        let count = 0;
+        for (let i = 0; i < arr.length / 2; i++) {
+            if (arr[i] * arr[i] === arr[arr.length / 2 + i]) {
+                count++;
+            }
+        }
+        if (count === arr.length / 2 && index !== 0) {
+            alert(true);
+        } else if (count !== arr.length) {
+            alert(false);
+        }
+    }
+
+    checkArr(arr)
+</script>
+</html>

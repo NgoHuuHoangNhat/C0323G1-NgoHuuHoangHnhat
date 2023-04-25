@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+
+    function checkArrInput(arr) {
+        let length = +prompt('nhập số lượng phần tử (số chẵn)');
+        if (length % 2 === 0) {
+            let i = 0
+            do {
+                let num = prompt('nhập số');
+                if (!isNaN(num)) {
+                    arr.push(num);
+                    i++
+                }
+            } while (i < length);
+        } else {
+            alert('Số phần tử phải là số chẵn');
+        }
+        return arr;
+    }
+
+    function checkArr(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length / 2; i++) {
+            if (arr[i] < arr[i + 1]) {
+                count++;
+            }
+        }
+        if (count === arr.length / 2) {
+            return 'OK';
+        } else {
+            return 'NO';
+        }
+    }
+
+    checkArrInput(arr)
+    document.write(arr + '<br>')
+    document.write(checkArr(arr))
+</script>
+</html>

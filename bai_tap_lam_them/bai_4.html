@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = prompt('nhập chuỗi');
+
+    function checkStr(str) {
+        let upper = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z';
+        let lower = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z';
+        let count = 0;
+        let count1 = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (lower.indexOf(str[i]) !== -1) {
+                count++;
+            }
+            if (upper.indexOf(str[i]) !== -1) {
+                count1++
+            }
+        }
+        if (count === count1) {
+            document.write(true);
+        } else {
+            document.write(false);
+        }
+    }
+
+    checkStr(str);
+</script>
+</html>

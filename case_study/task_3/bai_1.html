@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrA = [1, 2, 3, 4, 5];
+    let arrB = [];
+    let sum = 0;
+    for (let i = 0; i < arrA.length; i++) {
+        arrB.push(sum += arrA[i])
+    }
+    document.write('Mảng A là: ' + arrA + '<br>');
+    document.write('Mảng B là: ' + arrB);
+</script>
+</html>

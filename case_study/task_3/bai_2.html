@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arrA = [7, 2, 5, 3, 5, 3];
+    let arrB = [7, 2, 5, 4, 6, 3, 5, 3, 4];
+    let arrC = [];
+    for (let i = 0; i < arrB.length; i++) {
+        if (!arrA.includes(arrB[i])) {
+            if (!arrC.includes(arrB[i]))
+                arrC.push(arrB[i]);
+        }
+    }
+    document.write('Các phần tử có trong mảng B mà không có trong mảng A: ' + arrC)
+</script>
+</html>

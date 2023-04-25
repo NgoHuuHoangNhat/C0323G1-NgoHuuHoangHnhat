@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4, 5, 6]; // số thứ tự các loại nước giải khát
+    let arr1 = [15000, 30000, 25000, 25000, 10000, 20000]; //Giá của các loại nước giải khát
+    let flag = true;
+    let sum = 0;
+    do {
+        let num = +prompt('  1. Cafe \n' +
+            '  2. Cam vắt\n' +
+            '  3. Nước ép cà rốt\n' +
+            '  4. Nước ép cà chua\n' +
+            '  5. Nước lọc\n' +
+            '  6. Nước dừa\n' +
+            '  7. Cancel')
+        if (num !== 7) {
+            let a = +prompt('nhập số lượng');
+            for (let i = 0; i < arr1.length; i++) {
+                if (num === arr[i]) {
+                    sum += arr1[i] * a;
+                }
+            }
+        } else {
+            flag = false
+            break;
+        }
+    } while (flag)
+    document.write('Tổng tiền phải trả: ' + sum)
+</script>
+</body>
+</html>

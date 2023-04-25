@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //Nhập lương nhân viên
+    let wage = +prompt('nhập lương nhân viên');
+
+    //Tính thuế
+    function calculatorTax(wage) {
+        if (wage >= 0 && !isNaN(wage)) {
+            if (wage < 7000000) {
+                return wage * 0.05;
+            } else if (wage < 15000000) {
+                return wage * 0.1;
+            } else {
+                return wage * 0.2;
+            }
+        } else {
+            alert('Nhập sai (lương phải là số và lớn hơn 0 ');
+        }
+    }
+
+    document.write('Thuế phải nộp: ' + calculatorTax(wage) + '<br>');
+    document.write('Lương ròng: ' + (wage - calculatorTax(wage)));
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = prompt('nhập vào chuỗi bằng chữ cái alphabet');
+    let arr = [];
+
+    function checkStr(str) {
+        let upper = 'A,E,I,O,U';
+        let lower = 'a,e,i,o,u';
+        for (let i = 0; i < str.length; i++) {
+            if (upper.indexOf(str[i]) !== -1) {
+                arr.push(str[i]);
+            } else if (lower.indexOf(str[i]) !== -1) {
+                arr.push(str[i]);
+            }
+        }
+        return arr;
+    }
+
+    document.write('Các chữ nguyên âm có trong mảng là: ' + checkStr(str));
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

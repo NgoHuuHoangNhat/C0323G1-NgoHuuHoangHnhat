@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    arr = [];
+    let index = +prompt('nhâp số lượng chuỗi');
+    for (let i = 0; i < index; i++) {
+        let num = prompt('nhập chuỗi');
+        if (!isNaN(num)) {
+            arr.push(num);
+        }
+    }
+    document.write('Mảng là ' + arr + '<br>');
+
+    function checkArr(arr) {
+        let count = 0;
+        for (let i = 0; i < index; i++) {
+            if (arr[i] < arr[i + 1]) {
+                count++;
+            }
+        }
+        if (count === arr.length - 1) {
+            document.write('OK');
+        } else {
+            document.write('NO');
+        }
+    }
+
+    checkArr(arr);
+</script>
+</html>

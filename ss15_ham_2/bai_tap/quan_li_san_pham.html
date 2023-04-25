@@ -5,7 +5,7 @@
     <title>Quản Lý Sản Phẩm</title>
 </head>
 <body>
-<div><input type="text" id="name"></div>
+<div><input type="text" id="name" placeholder="Enter Name"></div>
 <button onclick="add()">Nhập vào</button>
 <div id="result"></div>
 </body>
@@ -15,11 +15,12 @@
 
     function add() {
         let name = document.getElementById('name').value;
-        if (name !== '') {
+        if (name !== '' && name !== ' ') {
             productList.push(name);
         } else {
             alert('Cần nhập tên sp');
         }
+        document.getElementById('name').value = "";
         display();
     }
 
@@ -29,6 +30,14 @@
             productList.splice(index, 1);
         }
         display();
+    }
+
+    function onchangeProduct(index) {
+        let name = prompt('Nhập nội dung');
+        if (name !== '' && name !== ' ') {
+            productList.splice(index, 1, name)
+        }
+        display()
     }
 
     function display() {
@@ -42,7 +51,7 @@
         for (let i = 0; i < productList.length; i++) {
             tableStr += '<tr>\n' +
                 '        <td>' + productList[i] + '</td>\n' +
-                '        <td>' + '<button>Edit</button>' + '</td>\n' +
+                '        <td>' + '<button onclick="onchangeProduct(' + i + ')">Edit</button>' + '</td>\n' +
                 '        <td>' + '<button onclick="deleteProduct(' + i + ')">Delete</button>' + '</td>\n' +
                 '    </tr>';
         }

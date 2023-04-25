@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let arrOut = [];
+
+    function enterArr() {
+        let num = +prompt('nhập số lượng kí tự ');
+        if (!isNaN(num) && num > 0) {
+            for (let i = 0; i < num; i++) {
+                let numInput = +prompt('nhập số');
+                if (!isNaN(numInput) && numInput > 10 && numInput < 100) {
+                    arr.push(numInput);
+                }
+            }
+        }
+        return arr;
+    }
+
+    enterArr()
+    console.log(arr)
+
+    function checkArr(arr) {
+        for (let i in arr) {
+            for (let j =0; j<arr) {
+                if (arr[i][j] < arr[i][j + 1]) {
+                    arrOut.push(arr[i]);
+                    // console.log(arr[i]);
+                }
+            }
+        }
+        return arrOut;
+    }
+
+    checkArr(arr);
+    console.log(arrOut);
+</script>
+</html>
