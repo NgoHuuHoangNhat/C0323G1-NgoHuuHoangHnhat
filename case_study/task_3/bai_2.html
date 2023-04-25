@@ -13,10 +13,11 @@
     let arrC = [];
     for (let i = 0; i < arrB.length; i++) {
         if (!arrA.includes(arrB[i])) {
-            if (!arrC.includes(arrB[i]))
+            if (!arrC.includes(arrB[i])) {
                 arrC.push(arrB[i]);
+            }
         }
     }
-    document.write('Các phần tử có trong mảng B mà không có trong mảng A: ' + arrC)
+    document.write('Các phần tử có trong mảng B mà không có trong mảng A: ' + arrC);
 </script>
 </html>

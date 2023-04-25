@@ -10,10 +10,10 @@
 <script>
     let m = +prompt('nhập số hàng');
     let n = +prompt('nhập số cột');
-    document.write('Tổng các số chẵn trong ma trận là: '+calculator(checkArr(m, n)));
+    document.write('Tổng các số chẵn trong ma trận là: ' + calculatorSum(checkArr(m, n)));
 
     function checkArr(m, n) {
-        let arr = new Array(n)
+        let arr = new Array(n);
         for (let i = 0; i < m; i++) {
             arr[i] = new Array(m);
             for (let j = 0; j < n; j++) {
@@ -23,7 +23,7 @@
         return arr;
     }
 
-    function calculator(arr) {
+    function calculatorSum(arr) {
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
             for (let j = 0; j < arr[i].length; j++) {
