@@ -8,11 +8,11 @@
 
 </body>
 <script>
-    // let num =+prompt('nhập chiều cao')
+    let num = +prompt('nhập chiều cao')
 
-    for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 10; j++) {
-            if (j === 4 && ) {
+    for (let i = 0; i < num; i++) {
+        for (let j = 0; j < num; j++) {
+            if (j === 0 || j === i || i === num - 1) {
                 document.write('*');
             } else {
                 document.write('&nbsp;&nbsp;');
