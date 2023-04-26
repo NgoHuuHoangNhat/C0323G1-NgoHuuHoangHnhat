@@ -3,37 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <title>Quản lí học viên</title>
+    <style>
+        table tr td {
+
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-<label><input type="button" onclick="" value="Thêm mới học viên"></label>
-<label><input type="button" onclick="" value="Sửa thông tin học viên"></label>
-<label><input type="button" onclick="" value="Xoá học viên"></label>
+<label><input type="button" onclick="addStudent()" value="Thêm mới học viên"></label>
+
+<label><input type="button" onclick="editStudent()" value="Sửa thông tin học viên"></label>
+
+<label><input type="button" onclick="deleteStudent()" value="Xoá học viên"></label>
+
+<div><br></div>
+
 <div id="result"></div>
 </body>
 <script>
 
-    let studentList = ['Nguyễn Văn A', 'Nguyễn Thị B', 'Nguyễn Văn C'];
+    class Student {
+        constructor(id, name, classs, email, dates, module) {
+            this.id = id;
+            this.name = name;
+            this.classs = classs;
+            this.email = email;
+            this.dates = dates;
+            this.module = module;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getClasss() {
+            return this.classs;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getDates() {
+            return this.dates;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setClasss(classs) {
+            this.classs = classs;
+        }
+
+        setEmail(email) {
+            this.email = email;
+
+        }
+
+        setDates(dates) {
+            this.dates = dates;
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+    }
+
+    let student1 = new Student('HV-0001', 'Nhật', 'C0323G1', 'nhat@gmail.com', '31-03-1996', 'Module-1');
+    let student2 = new Student('HV-0002', 'Quân', 'C0323G1', 'quan@gmail.com', '31-03-1998', 'Module-1');
+    let student3 = new Student('HV-0003', 'Tin', 'C0323G1', 'tin@gmail.com', '31-03-1997', 'Module-1');
+    let arr = [student1, student2, student3];
+
 
     function addStudent() {
-        let student = ''
+        let id = prompt('Nhập mã học viên');
+        for (let i = 0; i < arr.length; i++) {
+            if (id !== arr[i].getId() && id !== '' && id !== null) {
+                let name = prompt('Nhập tên học viên');
+                let classs = prompt('Nhập lớp học viên');
+                let email = prompt('Nhập email của học viên');
+                let dates = prompt('Nhập ngày sinh của học viên');
+                let module = prompt('Nhập module học viên đang học');
+                let student = new Student(id, name, classs, email, dates, module);
+                arr.push(student);
+                break;
+            } else {
+                alert('Học viên này đã có trong danh sách hoặc bạn chưa nhập gì');
+                break;
+            }
+        }
+        display();
+    }
+
+    function editStudent() {
+        let edit = prompt('Nhập vào Id');
+        for (let i = 0; i < arr.length; i++) {
+            if (edit === arr[i].getId()) {
+                arr[i].setId(edit);
+                let name = prompt('Nhập tên học viên');
+                arr[i].setName(name);
+                let classs = prompt('Nhập tên lớp');
+                arr[i].setClasss(classs);
+                let email = prompt('Nhập email');
+                arr[i].setEmail(email);
+                let dates = prompt('Nhập ngày sinh');
+                arr[i].setDates(dates);
+                let module = prompt('Nhập module');
+                arr[i].setModule(module);
+            }
+        }
+        display();
+    }
+
+    function deleteStudent() {
+        let deletee = prompt('nhập mã học viên');
+        let checkId = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (deletee === arr[i].getId()) {
+                checkId = true;
+                if (confirm('Bạn có muốn xoá học viên ' + arr[i].getName())) {
+                    arr.splice(i, 1);
+                }
+            }
+        }
+        if (!checkId) {
+            alert('Học viên không tồn tại');
+        }
+        display();
     }
 
     function display() {
-        let strTable = '<table border="1" style="border-collapse: collapse">\n' +
+        let strTable = '<table>\n' +
             '    <tr>\n' +
             '        <td width="150px" height="25px">Mã học viên</td>\n' +
             '        <td width="100px" height="25px">Tên</td>\n' +
             '        <td width="100px" height="25px">Lớp</td>\n' +
             '        <td width="100px" height="25px">Email</td>\n' +
             '        <td width="100px" height="25px">Ngày sinh</td>\n' +
+            '        <td width="100px" height="25px">Module</td>\n' +
             '    </tr>';
-        for (let i = 0; i < studentList.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             strTable += '<tr>\n' +
-                '        <td>' + (i + 1) + '</td>\n' +
-                '        <td>' + studentList[i] + '</td>\n' +
-                '        <td>C0323G1</td>\n' +
-                '        <td>nguyenvana@gmail.com</td>\n' +
-                '        <td>01/01/1996</td>\n' +
+                '        <td>' + arr[i].getId() + '</td>\n' +
+                '        <td>' + arr[i].getName() + '</td>\n' +
+                '        <td>' + arr[i].getClasss() + '</td>\n' +
+                '        <td>' + arr[i].getEmail() + '</td>\n' +
+                '        <td>' + arr[i].getDates() + '</td>\n' +
+                '        <td>' + arr[i].getModule() + '</td>\n' +
                 '    </tr>';
         }
         strTable += '</table>';
