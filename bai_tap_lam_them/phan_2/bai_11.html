@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<!--11.	Viết chương trình thực hiện các công việc như sau :-->
+<!--a.	Nhập một mảng a gồm n phần tử kiểu nguyên int-->
+<!--b.	Tính tổng số dương lẻ mảng a-->
+<!--c.	Tính tổng các số nguyên tố ở vị trí chắn.-->
+<!--d.	Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở vị trí đầu tiên-->
+<!--e.	Sắp sếp mảng a theo thứ tự tăng dần..-->
+<!--e.	Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a.-->
+
+
+<script>
+    let arr = [];
+    let length = +prompt('nhập độ dài mảng');
+
+    kiemTraPhanTu();
+    document.write('Tổng các số lẻ có trong mảng là: ' + tinhTongSoDuongLe() + '<br>');
+    document.write('Tổng các số nguyên tố ở vị trí chẵn có trong mảng là: ' + tinhTongSoNguyenToOViTriChan() + '<br>');
+    kiemTraK();
+
+
+    function kiemTraK() {
+        let k = prompt('nhập k');
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (k == arr[i]) {
+                flag = true;
+                document.write(k + ' có xuất hiện trong mảng' + '<br>' + 'phần tử ở vị trí đầu tiên là: ' + arr[0] + '<br>');
+                break;
+            }
+        }
+        if (!flag) {
+            document.write(k + ' không xuất hiện trong mảng' + '<br>');
+        }
+    }
+
+    function kiemTraPhanTu() {
+        for (let i = 0; i < length; i++) {
+            let num = +prompt('nhập phần tử');
+            if (!isNaN(num) && num % 1 === 0) {
+                arr.push(num);
+            }
+        }
+    }
+
+    function tinhTongSoDuongLe() {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 0 && arr[i] % 2 !== 0) {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
+
+    function tinhTongSoNguyenToOViTriChan() {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (kiemTraSoNguyenTo(arr[i]) && i % 2 === 0) {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
+
+    function kiemTraSoNguyenTo(num) {
+        if (num < 2) {
+            return false;
+        } else if (num === 2) {
+            return true;
+        } else {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+</script>
+</body>
+</html>

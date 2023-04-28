@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<!--10.	Nhập một chuổi ký tự tuỳ ý, sau đó thực hiện công việc sau:-->
+<!--a. In mỗi từ trên mỗi dòng-->
+<!--b. Đếm số từ có trong chuổi đã cho.-->
+<!--b. Đưa ra bảng tần số xuất hiện của các từ.-->
+
+<script>
+    let str = prompt();
+    inStr();
+    document.write('Chuỗi nhập vào có ' + demTu() + ' kí tự' + '<br>');
+    demTanSo();
+
+    function inStr() {
+        let arr = str.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+            document.write('Dòng 1: ' + arr[i] + '<br>');
+        }
+    }
+
+    function demTu() {
+        let arr = str.split(' ');
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== ' ') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    function demTanSo() {
+        let arr = str.split(' ');
+        let arrNew = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arrNew.includes(arr[i])) {
+                break;
+            } else {
+                let count = 0;
+                for (let j = 0; j < arr.length; j++) {
+                    if (arr[i] === arr[j]) {
+                        count++;
+                    }
+                }
+                arrNew.push(arr[i]);
+                document.write('Từ ' + arr[i] + ' xuất hiện ' + count + ' lần' + '<br>');
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<!--9. Nhập vào một chuỗi ký tự thực hiện công việc sau:-->
+<!--a. In ra chuỗi đảo ngược của chuỗi đã cho-->
+<!--b. Đổi chuổi đã cho sang chữ hoa-->
+<!--c. Đổi chuỗi đã cho sang chữ thường-->
+<!--d. Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)-->
+<script>
+    let str = prompt('nhập chuỗi');
+    document.write('Chuỗi nhập vào là: ' + str + '<br>');
+    document.write('Chuỗi sau khi đảo ngược là: ' + daoNguocChuoi() + '<br>');
+    document.write('Chuỗi sau khi được in hoa là: ' + inHoaChuoi() + '<br>');
+    document.write('Chuỗi sau khi được in thường là: ' + inThuongChuoi() + '<br>');
+    document.write('Chuỗi sau khi được thay dổi là: ' + thayDoiInHoaInThuong() + '<br>');
+
+    function daoNguocChuoi() {
+        let arr = str.split(' ')
+        for (let i = 0; i < arr.length / 2; i++) {
+            let temp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
+        }
+        return arr.join(' ');
+    }
+
+    function inHoaChuoi() {
+        let arr = str.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+            let arr1 = arr[i].split('');
+            for (let j = 0; j < arr1.length; j++) {
+                arr1[j] = arr1[j].toUpperCase();
+            }
+            arr[i] = arr1.join('');
+        }
+        return arr.join(' ');
+    }
+
+    function inThuongChuoi() {
+        let arr = str.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+            let arr1 = arr[i].split('');
+            for (let j = 0; j < arr1.length; j++) {
+                arr1[j] = arr1[j].toLowerCase();
+            }
+            arr[i] = arr1.join('');
+        }
+        return arr.join(' ');
+    }
+
+    function thayDoiInHoaInThuong() {
+        let arr = str.split(' ');
+        for (let i = 0; i < arr.length; i++) {
+            let arr1 = arr[i].split('');
+            for (let j = 0; j < arr1.length; j++) {
+                if (arr1[j] === arr1[j].toUpperCase()) {
+                    arr1[j] = arr1[j].toLowerCase();
+                } else if (arr1[j] === arr1[j].toLowerCase()) {
+                    arr1[j] = arr1[j].toUpperCase();
+                }
+            }
+            arr[i] = arr1.join('');
+        }
+        return arr.join(' ');
+    }
+
+
+</script>
+</body>
+</html>

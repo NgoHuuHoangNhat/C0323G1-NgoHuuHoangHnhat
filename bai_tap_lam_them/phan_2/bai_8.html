@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<!--8. Nhập 2 số nguyên dương a và b. Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a và b đó.-->
+<script>
+    let numA = +prompt('nhập a');
+    let numB = +prompt('nhập b');
+    let uocChungLonNhat;
+    let boiChungNhoNhat;
+    let flag = false;
+    if (!isNaN(numA) && !isNaN(numB) && numA % 1 === 0 && numB % 1 === 0 && numA > 0 && numB > 0) {
+        flag = true;
+    } else {
+        alert('Hãy nhập số nguyên dương');
+    }
+    document.write('Ước chung lớn nhất là: ' + timUocChungLonNhat() + '<br>');
+    document.write('Bội chung nhỏ nhất là: ' + timBoiChungNhoNhat() + '<br>');
+
+    function timUocChungLonNhat() {
+        if (flag) {
+            let i = numA;
+            while (i > 0) {
+                if (numA % i === 0 && numB % i === 0) {
+                    uocChungLonNhat = i;
+                    return uocChungLonNhat;
+                }
+                i--;
+            }
+        }
+    }
+
+    function timBoiChungNhoNhat() {
+        if (flag) {
+            let i = 1;
+            while (i > 0) {
+                if (i % numA === 0 && i % numB === 0) {
+                    boiChungNhoNhat = i;
+                    return boiChungNhoNhat;
+                }
+                i++;
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

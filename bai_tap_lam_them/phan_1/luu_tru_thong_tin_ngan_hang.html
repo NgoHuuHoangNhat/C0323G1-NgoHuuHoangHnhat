@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table tr td {
+
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<button onclick="getInfo(accountList)">Lấy thông tin</button>
+<button onclick="addMoney(accountList)">Nộp tiền</button>
+<button onclick="subMoney(accountList)">Rút tiền</button>
+<div id="result"></div>
+
+</body>
+<script>
+    class Data {
+        constructor(id, name, money) {
+            this.id = id;
+            this.name = name;
+            this.money = money;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getMoney() {
+            return this.money;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setAddMoney(money) {
+            this.money += money;
+        }
+
+        setSubMoney(money) {
+            this.money -= money;
+        }
+    }
+
+    let accountList = [];
+    let account1 = new Data('0001', 'Nhật', 100000);
+    let account2 = new Data('0002', 'Nhật 1', 200000);
+    let account3 = new Data('0003', 'Nhật 2', 300000);
+    accountList.push(account1, account2, account3);
+    console.log(accountList);
+    display();
+
+    function getInfo(accountList) {
+        let checkId = prompt('Nhập số tài khoản mà bạn cần lấy thông tin');
+        let flag = false;
+        for (let i = 0; i < accountList.length; i++) {
+            if (checkId === accountList[i].getId()) {
+                flag = true;
+                alert('Số tài khoản: ' + accountList[i].getId() + '\n' + 'Tên tài khoản: ' + accountList[i].getName() + '\n' + 'Số tiền có trong tài khoản: ' + accountList[i].getMoney());
+            }
+        }
+        if (!flag) {
+            alert('Số tài khoản không có thực');
+        }
+        display();
+    }
+
+    function addMoney(accountList) {
+        let checkId = prompt('Nhập số tài khoản cần gửi');
+        let flag = false;
+        for (let i = 0; i < accountList.length; i++) {
+            if (checkId === accountList[i].getId()) {
+                flag = true;
+                let addMoney = +prompt('Nhập số tiền gửi');
+                accountList[i].setAddMoney(addMoney);
+            }
+        }
+        if (!flag) {
+            alert('Số tài khoản không có thực');
+        }
+        display();
+    }
+
+    function subMoney(accountList) {
+        let checkId = prompt('Nhập số tài khoản cần rút');
+        let flag = false;
+        for (let i = 0; i < accountList.length; i++) {
+            if (checkId === accountList[i].getId()) {
+                flag = true;
+                if (accountList[i].getMoney() > 0) {
+                    let subMoney = +prompt('Nhập số tiền cần rút');
+                    if (subMoney <= accountList[i].getMoney()) {
+                        accountList[i].setSubMoney(subMoney);
+                    }
+                }else {
+                    alert('Không có tiền trong tài khoản');
+                    break;
+                }
+            }
+        }
+        if (!flag) {
+            alert('Số tài khoản không có thực');
+        }
+
+        display();
+    }
+
+    function display() {
+        let tableStr = '<table>' + '<tr>\n' +
+            '        <td>Stt</td>\n' +
+            '        <td>Số Tài Khoản</td>\n' +
+            '        <td>Tên Tài Khoản</td>\n' +
+            '        <td>Số Tiền Có Trong Tài Khoản</td>\n' +
+            '    </tr>';
+        for (let i = 0; i < accountList.length; i++) {
+            tableStr += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + accountList[i].getId() + '</td>\n' +
+                '        <td>' + accountList[i].getName() + '</td>\n' +
+                '        <td>' + accountList[i].getMoney() + '</td>\n' +
+                '    </tr>';
+        }
+        tableStr += '</table>';
+        document.getElementById('result').innerHTML = tableStr;
+    }
+
+
+</script>
+</html>
